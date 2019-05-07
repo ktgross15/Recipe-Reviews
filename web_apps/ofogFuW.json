@@ -1,0 +1,39 @@
+{
+  "type": "STANDARD",
+  "hasLegacyBackendURL": false,
+  "params": {
+    "html": "\u003c!-- Body of your app --\u003e",
+    "css": "body {\n}",
+    "backendEnabled": true,
+    "autoStartBackend": false,
+    "envSelection": {
+      "envMode": "INHERIT"
+    },
+    "libraries": [
+      "jquery",
+      "dataiku"
+    ]
+  },
+  "config": {},
+  "name": "Ingredient lookup",
+  "apiKey": "dummyKey_MtlPoOZcXRSCs41idPzy1adjXBp8J4YY",
+  "versionTag": {
+    "versionNumber": 2,
+    "lastModifiedBy": {
+      "login": "Jesse"
+    },
+    "lastModifiedOn": 1556648321618
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "Jesse"
+    },
+    "lastModifiedOn": 1556647661621
+  },
+  "tags": [],
+  "checklists": {
+    "checklists": []
+  },
+  "customFields": {}
+}

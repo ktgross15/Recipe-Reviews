@@ -1,0 +1,108 @@
+{
+  "mode": "INTERSECT",
+  "selectedColumns": [
+    "name",
+    "author",
+    "ingredients",
+    "directions",
+    "description",
+    "description_len",
+    "site",
+    "calories",
+    "num_reviews",
+    "rating"
+  ],
+  "originColumnName": "original_dataset",
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "virtualInputs": [
+    {
+      "preFilter": {},
+      "originLabel": "allrecipes_prepared",
+      "index": 0
+    },
+    {
+      "preFilter": {},
+      "originLabel": "epicurious_prepared_s3",
+      "index": 1
+    }
+  ],
+  "copySchemaFromDatasetWithName": "recipe_data_prepared2",
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "author",
+            "type": "string"
+          },
+          {
+            "name": "ingredients",
+            "type": "string"
+          },
+          {
+            "name": "directions",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "description_len",
+            "type": "bigint"
+          },
+          {
+            "name": "site",
+            "type": "string"
+          },
+          {
+            "name": "calories",
+            "type": "string"
+          },
+          {
+            "name": "num_reviews",
+            "type": "bigint"
+          },
+          {
+            "name": "rating",
+            "type": "double"
+          }
+        ],
+        "userModified": false
+      }
+    },
+    "distinct": false,
+    "enabled": false
+  },
+  "addOriginColumn": false
+}
