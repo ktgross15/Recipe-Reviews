@@ -22,6 +22,21 @@ df = df[df['num_reviews']>=3]
 df.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+def create_bins(row):
+    if row == np.NaN:
+        return "Unknown"
+    elif row < 100:
+        return "<100"
+    else:
+        return ">=100"
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+numerical_cols = ['description_len','calories']
+
+for col in numerical_cols:
+    df[col] = df[col].apply(create_bins)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df.info()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
