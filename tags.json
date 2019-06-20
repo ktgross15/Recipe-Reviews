@@ -4,6 +4,7 @@
     "recipe-editor": {},
     "imported": {
       "color": "#263238"
-    }
+    },
+    "contains python": {}
   }
 }
