@@ -26,5 +26,5 @@ df.info()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Write recipe outputs
-df_final = dataiku.Dataset("recipes_for_modeling")
+recipes_for_modeling = dataiku.Dataset("recipes_for_modeling")
 recipes_for_modeling.write_with_schema(df)
