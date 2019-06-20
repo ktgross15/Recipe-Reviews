@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
-      "login": "Jesse"
+      "login": "ktgross15"
     },
-    "lastModifiedOn": 1556635598462
+    "lastModifiedOn": 1561042102638
   },
   "creationTag": {
     "versionNumber": 0,
@@ -103,10 +103,6 @@
         "type": "string"
       },
       {
-        "name": "description_len",
-        "type": "bigint"
-      },
-      {
         "name": "ingredients",
         "type": "string"
       },
@@ -140,6 +136,10 @@
       {
         "name": "site",
         "type": "string"
+      },
+      {
+        "name": "description_len",
+        "type": "bigint"
       }
     ],
     "userModified": true
