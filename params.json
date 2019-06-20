@@ -12,18 +12,7 @@
     ]
   },
   "exposedObjects": {
-    "objects": [
-      {
-        "type": "DATASET",
-        "localName": "recipes_for_modeling",
-        "rules": [
-          {
-            "targetProject": "MOVIERATINGSKG",
-            "appearOnFlow": true
-          }
-        ]
-      }
-    ]
+    "objects": []
   },
   "projectType": "REGULAR",
   "owner": "ktgross15",
@@ -163,11 +152,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 78,
+    "versionNumber": 79,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1561043784888
+    "lastModifiedOn": 1561044011511
   },
   "creationTag": {
     "versionNumber": 0,
