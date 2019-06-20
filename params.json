@@ -1,10 +1,29 @@
 {
   "dashboardAuthorizations": {
     "allAuthorized": false,
-    "authorizations": []
+    "authorizations": [
+      {
+        "objectRef": {
+          "objectId": "recipes_for_modeling",
+          "objectType": "DATASET"
+        },
+        "modes": []
+      }
+    ]
   },
   "exposedObjects": {
-    "objects": []
+    "objects": [
+      {
+        "type": "DATASET",
+        "localName": "recipes_for_modeling",
+        "rules": [
+          {
+            "targetProject": "MOVIERATINGSKG",
+            "appearOnFlow": true
+          }
+        ]
+      }
+    ]
   },
   "projectType": "REGULAR",
   "owner": "ktgross15",
@@ -144,11 +163,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 77,
+    "versionNumber": 78,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1561042562895
+    "lastModifiedOn": 1561043784888
   },
   "creationTag": {
     "versionNumber": 0,
