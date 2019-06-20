@@ -1,0 +1,78 @@
+{
+  "targetVariable": "rating_40+",
+  "weight": {},
+  "calibration": {
+    "calibrationMethod": "NO_CALIBRATION"
+  },
+  "guessPolicy": "DEFAULT",
+  "id": "CmKHA5ZS",
+  "initiator": "ktgross15",
+  "taskType": "PREDICTION",
+  "name": "Predict rating_40+",
+  "backendType": "PY_MEMORY",
+  "maxConcurrentModelTraining": 2,
+  "envSelection": {
+    "envMode": "INHERIT"
+  },
+  "containerSelection": {
+    "containerMode": "INHERIT"
+  },
+  "sparkParams": {
+    "sparkConf": {
+      "inheritConf": "default",
+      "conf": []
+    },
+    "sparkUseGlobalMetastore": false,
+    "sparkPreparedDFStorageLevel": "MEMORY_AND_DISK",
+    "sparkRepartitionNonHDFS": 1,
+    "pipelineAllowStart": true,
+    "pipelineAllowMerge": true,
+    "sparkExecutionEngine": "SPARK_SUBMIT"
+  },
+  "sparkCheckpoint": "NONE",
+  "predictionDisplayScript": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {},
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "predictionDisplayCharts": []
+}
