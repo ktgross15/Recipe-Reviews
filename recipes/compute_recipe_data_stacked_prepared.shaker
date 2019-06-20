@@ -218,60 +218,6 @@
         }
       ],
       "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "RoundProcessor",
-      "params": {
-        "mode": "ROUND",
-        "places": 1,
-        "columns": [
-          "rating"
-        ],
-        "precision": 2,
-        "appliesTo": "SINGLE_COLUMN"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "CreateColumnWithGREL",
-      "params": {
-        "expression": "if(rating\u003e\u003d4.0, 1, 0)",
-        "column": "rating 4.0+"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "FilterOnNumericalRange",
-      "params": {
-        "min": 3.0,
-        "booleanMode": "AND",
-        "columns": [
-          "num_reviews"
-        ],
-        "action": "KEEP_ROW",
-        "appliesTo": "SINGLE_COLUMN"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": true,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "CreateColumnWithGREL",
-      "params": {
-        "expression": "round(rating*2)/2",
-        "column": "rating"
-      },
-      "alwaysShowComment": false
     }
   ],
   "maxProcessedMemTableBytes": -1,
