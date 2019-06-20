@@ -1,5 +1,5 @@
 {
-  "type": "Filesystem",
+  "type": "PostgreSQL",
   "managed": true,
   "formatType": "csv",
   "checklists": {
@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 3,
+    "versionNumber": 4,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1561035007973
+    "lastModifiedOn": 1561043437515
   },
   "creationTag": {
     "versionNumber": 0,
@@ -74,15 +74,19 @@
   },
   "tags": [],
   "params": {
-    "connection": "filesystem_managed",
-    "path": "${projectKey}/recipes_prepared",
+    "writeWithCopyBadDataBehavior": "NOVERIFY_ERROR",
+    "connection": "local_postgres",
     "notReadyIfEmpty": false,
-    "filesSelectionRules": {
-      "mode": "ALL",
-      "excludeRules": [],
-      "includeRules": [],
-      "explicitFiles": []
-    }
+    "mode": "table",
+    "partitioningType": "custom",
+    "normalizeDoubles": true,
+    "table": "${projectKey}_recipes_prepared",
+    "schema": "logs_use_case",
+    "tableCreationMode": "auto",
+    "writeInsertBatchSize": 10000,
+    "writeJDBCBadDataBehavior": "DISCARD_ROW",
+    "readColsWithUnknownTzAsDates": false,
+    "readSQLDateColsAsDSSDates": true
   },
   "schema": {
     "columns": [
