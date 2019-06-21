@@ -95,7 +95,7 @@
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -127,7 +127,7 @@
         "sendToInput": "main"
       },
       "description_len": {
-        "generate_derivative": false,
+        "generate_derivative": true,
         "numerical_handling": "REGULAR",
         "missing_handling": "IMPUTE",
         "missing_impute_with": "MEAN",
@@ -139,7 +139,7 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -244,7 +244,7 @@
         "stopWordsMode": "NONE",
         "useCustomVectorizer": false,
         "name": "ingredients",
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "TEXT",
         "state": {
           "userModified": true,
@@ -303,7 +303,7 @@
         "sendToInput": "main"
       },
       "calories": {
-        "generate_derivative": false,
+        "generate_derivative": true,
         "numerical_handling": "REGULAR",
         "missing_handling": "IMPUTE",
         "missing_impute_with": "MEAN",
@@ -315,7 +315,7 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
