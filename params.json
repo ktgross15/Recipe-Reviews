@@ -15,6 +15,25 @@
     "objects": []
   },
   "projectType": "REGULAR",
+  "bundleExporterSettings": {
+    "exportOptions": {
+      "exportUploads": false,
+      "exportManagedFS": false,
+      "exportAnalysisModels": false,
+      "exportSavedModels": false,
+      "exportManagedFolders": false,
+      "exportAllInputDatasets": false,
+      "exportAllDatasets": false,
+      "exportAllInputManagedFolders": false,
+      "exportGitRepository": false,
+      "exportInsightsData": false,
+      "useManualPluginsInfo": false,
+      "includedDatasetsData": [],
+      "includedSavedModels": [],
+      "includedManagedFolders": [],
+      "shareAllInputDatasets": false
+    }
+  },
   "owner": "ktgross15",
   "permissions": [],
   "additionalDashboardUsers": {
@@ -152,11 +171,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 87,
+    "versionNumber": 88,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1561054086239
+    "lastModifiedOn": 1563370463647
   },
   "creationTag": {
     "versionNumber": 0,
