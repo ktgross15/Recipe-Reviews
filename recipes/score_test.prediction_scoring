@@ -12,7 +12,7 @@
   "outputProbaPercentiles": false,
   "outputProbabilities": true,
   "forceOriginalEngine": false,
-  "forcedClassifierThreshold": 0.0,
+  "forcedClassifierThreshold": 0,
   "batchSize": 100,
   "overrideModelSpecifiedThreshold": false,
   "sparkParams": {
