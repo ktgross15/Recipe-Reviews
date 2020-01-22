@@ -1,9 +1,29 @@
 {
+  "name": "food_service",
   "endpoints": [
     {
       "modelRef": "s8ZCRTbJ",
       "useJava": true,
-      "testQueries": [],
+      "testQueries": [
+        {
+          "name": "train #1",
+          "q": {
+            "features": {
+              "name": "Acorn Squash with Apple",
+              "author": "Ed Haley",
+              "site": "All Recipes",
+              "ingredients": "acorn squash appl core slice tablespoon butter tablespoon brown sugar tablespoon fine chop walnut teaspoon salt teaspoon ground cinnamon",
+              "directions": "easili peel acorn squash without lose lot veget gentl drop squash larg pot boil water boil minut pour boil water fill cold water sit minut cool cool enough handl use knife slice peel ridg use teaspoon dig peel valley slice squash half remov seed stem slice halv section final cut inch chunk n place squash chunk larg microwav safe bowl along appl dot piec butter sprinkl brown sugar walnut salt cinnamon top cover plastic wrap poke hole ventil n cook microwav minut full power remov uncov stir return microwav cook anoth minut full power tender serv hot n",
+              "description": "peel acorn squash key delici dish that cook microwav fast easi delight busi famili",
+              "description_len": 133,
+              "calories": 98,
+              "num_reviews": 216,
+              "rating": 4.5,
+              "rating_40+": 1
+            }
+          }
+        }
+      ],
       "enrichMapping": [],
       "healthCheckQueries": [],
       "id": "food_End",
