@@ -11,24 +11,17 @@ client = dataikuapi.APINodeClient("http://localhost:14100", "recipe_prediction")
 
 description = TextInput(title="Ingredients", value='enter ingredients')
 
-# record_to_predict = {
-#     "name": "Honey-Garlic Slow Cooker Chicken Thighs",
-#     "author": "Myrna",
-#     "site": "All Recipes",
-#     "ingredients": "skinless boneless chicken thigh cup soy sauc cup ketchup cup honey clove garlic minc teaspoon dri basil",
-#     "directions": "lay chicken thigh bottom quart slow cooker n whisk soy sauc ketchup honey garlic basil togeth bowl pour chicken n cook low hour n",
-#     "description": "use often easi use pantri stapl alway hit adult kid serv basmati rice quinoa steam roast veget",
-#     "description_len": 162,
-#     "calories": 325,
-#     "num_reviews": 2000,
-#     "rating": 4,
-#     "rating_40+": 0
-# }
-# prediction = client.predict_record("end1", record_to_predict)
+
 ingredients = 'skinless boneless chicken thigh cup soy sauc cup ketchup cup honey clove garlic minc teaspoon dri basil'
 record = {'ingredients': ingredients}
 prediction = client.predict_record("end1", record)
 print(prediction["result"])
+
+# Set up layouts and add to document
+inputs = widgetbox(ingredients)
+
+curdoc().add_root(row(inputs, plot, width=800))
+curdoc().title = "Sliders"
 
 # # Set up data
 # N = 200
@@ -46,7 +39,7 @@ print(prediction["result"])
 
 
 # # Set up widgets
-# title = TextInput(title="title", value='sine wave')
+# text = TextInput(title="title", value='sine wave')
 # offset = Slider(title="offset", value=0.0, start=-5.0, end=5.0, step=0.1)
 # amplitude = Slider(title="amplitude", value=1.0, start=-5.0, end=5.0)
 # phase = Slider(title="phase", value=0.0, start=0.0, end=2*np.pi)
