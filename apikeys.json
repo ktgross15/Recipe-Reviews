@@ -63,5 +63,27 @@
     "key": "d1FnME0p1ZaMHlBM9qApwPM1DA8NDyVk",
     "label": "Key for Web app Recipe Ratings(CGHGdEZ)",
     "createdOn": 1585520619657
+  },
+  {
+    "execSQLLike": false,
+    "localDatasets": [],
+    "projectPrivileges": {
+      "admin": false,
+      "readProjectContent": false,
+      "writeProjectContent": false,
+      "exportDatasetsData": false,
+      "readDashboards": false,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false
+    },
+    "onBehalf": "jAFw4W0",
+    "id": "0H49HSAe3fsl8BJG",
+    "key": "o9UDCc1D9PM2wjCKvP3DzEfgdwPr0uB7",
+    "label": "Key for Web app Recipes - Interactive Scoring(jAFw4W0)",
+    "createdOn": 1585520866649
   }
 ]
