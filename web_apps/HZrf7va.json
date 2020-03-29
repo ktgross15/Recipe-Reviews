@@ -4,7 +4,8 @@
   "params": {
     "autoStartBackend": false,
     "envSelection": {
-      "envMode": "INHERIT"
+      "envMode": "EXPLICIT_ENV",
+      "envName": "36_deep_learning"
     },
     "infra": {
       "containerSelection": {
@@ -27,11 +28,11 @@
   "config": {},
   "name": "Recipe Review Prediction",
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585520116884
+    "lastModifiedOn": 1585520275402
   },
   "creationTag": {
     "versionNumber": 0,

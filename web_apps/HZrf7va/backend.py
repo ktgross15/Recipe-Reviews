@@ -9,22 +9,25 @@ from bokeh.plotting import figure
 
 client = dataikuapi.APINodeClient("http://localhost:14100", "recipe_prediction")
 
-description = TextInput(title="Recipe Description", value='enter description')
+description = TextInput(title="Ingredients", value='enter ingredients')
 
-record_to_predict = {
-    "name": "Honey-Garlic Slow Cooker Chicken Thighs",
-    "author": "Myrna",
-    "site": "All Recipes",
-    "ingredients": "skinless boneless chicken thigh cup soy sauc cup ketchup cup honey clove garlic minc teaspoon dri basil",
-    "directions": "lay chicken thigh bottom quart slow cooker n whisk soy sauc ketchup honey garlic basil togeth bowl pour chicken n cook low hour n",
-    "description": "use often easi use pantri stapl alway hit adult kid serv basmati rice quinoa steam roast veget",
-    "description_len": 162,
-    "calories": 325,
-    "num_reviews": 2000,
-    "rating": 4,
-    "rating_40+": 0
-}
-prediction = client.predict_record("end1", record_to_predict)
+# record_to_predict = {
+#     "name": "Honey-Garlic Slow Cooker Chicken Thighs",
+#     "author": "Myrna",
+#     "site": "All Recipes",
+#     "ingredients": "skinless boneless chicken thigh cup soy sauc cup ketchup cup honey clove garlic minc teaspoon dri basil",
+#     "directions": "lay chicken thigh bottom quart slow cooker n whisk soy sauc ketchup honey garlic basil togeth bowl pour chicken n cook low hour n",
+#     "description": "use often easi use pantri stapl alway hit adult kid serv basmati rice quinoa steam roast veget",
+#     "description_len": 162,
+#     "calories": 325,
+#     "num_reviews": 2000,
+#     "rating": 4,
+#     "rating_40+": 0
+# }
+# prediction = client.predict_record("end1", record_to_predict)
+ingredients = 'skinless boneless chicken thigh cup soy sauc cup ketchup cup honey clove garlic minc teaspoon dri basil'
+record = {'ingredients': ingredients}
+prediction = client.predict_record("end1", record)
 print(prediction["result"])
 
 # # Set up data
