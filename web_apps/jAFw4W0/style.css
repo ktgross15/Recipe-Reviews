@@ -1,40 +1,156 @@
-/*
-    This imports default colors, you can use them with the syntax `var(--variable-name)`.
-    Example:
-        border: 3px solid var(--border-color);
-*/
-@import '/static/public/styles/1.0.0/variables.css';
+@import '/static/public/styles/1.0.0/dku-styles.css';
 
-.fetch-dataset-container {
-    display: flex;
-    width: 100%;
+body {
+    background: var(--grey-background);
 }
-
-.fetch-dataset-container section, .fetch-dataset-container form {
-    height: 100%;
+.block-header {
+    flex: 0 0 auto;
+    padding: 8px;
+    height: 40px;
+}
+.block-body {
+    flex: 1 1 auto;
     overflow: auto;
 }
 
-.error-message {
-    color: var(--error-red);
-    font-size: 16px;
-    font-weight: 600;
+.no-inputs-warning {
+    margin-top: 200px;
+    display: none;
+    color: var(--warning-orange);
+    text-align: center;
 }
 
-.fetch-dataset-form {
-    min-width: 300px;
+.no-inputs .no-inputs-warning {
+    display: block;
 }
 
-.fetch-dataset-results {
-    margin-top: 20px;
-    border: 3px solid var(--border-color);
+.results-table {
+    visibility: hidden;
+}
+
+.results-table--visible .results-table {
+    visibility: visible;
+    border-collapse: collapse;
+}
+
+.main-container {
+    display: flex;
+}
+
+.left-block, .right-block {
+    background: var(--white);
+    margin: 16px;
+    box-sizing: border-box;
+    height: calc(100% - 25px);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+    display: flex;
+    flex-direction: column;
+}
+
+.left-block {
+    flex: 1 2 0;
+}
+
+.right-block {
+    flex: 2 2 0;
+}
+
+.no-inputs .left-block, .no-inputs .right-block {
+    display: none;
+}
+
+.left-block h2, .right-block h2 {
+    margin-top: 0;
+    color: var(--grey-lighten-1)
+}
+
+form textarea:not([rows]).scoring__textarea {
     width: 100%;
-    font-size: 16px;
-    background-color: var(--grey-background);
-    color: var(--grey);
-    min-height: 300px;
+    padding: 8px;
+    height: 400px;
+    max-height: inherit;
 }
 
-#message{
-    white-space: pre-wrap;
+#scoring-mode {
+    float: right;
+}
+
+.scoring__button {
+    float: right;
+}
+
+#clear-results {
+    display: none;
+    float: right;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+#scoring-form {
+    display: none;
+}
+
+#message {
+    color: var(--error-red);
+    font-weight: 500;
+}
+
+#two-class-table {
+    display: none;
+}
+
+#multi-class-table {
+    display: none;
+}
+
+#regression-table {
+    display: none;
+}
+
+.two-class-scoring--visible #two-class-table {
+    display: table;
+}
+
+.multi-class-scoring--visible #multi-class-table {
+    display: table;
+}
+
+.regression-scoring--visible #regression-table {
+    display: table;
+}
+
+.results-table--visible .results-placeholder {
+    display: none;
+}
+.results-placeholder {
+    text-align: center;
+}
+
+.result-summary:hover {
+    cursor: pointer;
+    background: var(--grey-lighten-7);
+    box-shadow: 0 0 4px rgba(33, 33, 33, .3);
+}
+
+.result-details--visible.result-summary {
+    box-shadow: none;
+    background: var(--grey-lighten-7);
+    border-top: 4px solid white;
+}
+
+.result-details {
+    display: none;
+}
+
+.result-details--visible + .result-details {
+    display: table-row;
+    background: var(--grey-lighten-7);
+    border-bottom: 2px solid var(--grey-lighten-6);
 }
