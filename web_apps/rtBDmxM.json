@@ -2,7 +2,7 @@
   "type": "STANDARD",
   "hasLegacyBackendURL": false,
   "params": {
-    "backendEnabled": false,
+    "backendEnabled": true,
     "enableJavascriptModules": false,
     "autoStartBackend": false,
     "hideJSSecurityPanel": false,
@@ -36,11 +36,11 @@
   "name": "Recipe Review Prediction",
   "apiKey": "6S8kLKa1WpUTjfgtOoWpWlCNWDtrHbg3",
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585518731488
+    "lastModifiedOn": 1585519299561
   },
   "creationTag": {
     "versionNumber": 0,
