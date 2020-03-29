@@ -5,7 +5,7 @@
     "autoStartBackend": false,
     "envSelection": {
       "envMode": "EXPLICIT_ENV",
-      "envName": "36_deep_learning"
+      "envName": "food_webapp_36"
     },
     "infra": {
       "containerSelection": {
@@ -28,11 +28,11 @@
   "config": {},
   "name": "Recipe Review Prediction",
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585520275402
+    "lastModifiedOn": 1585520486091
   },
   "creationTag": {
     "versionNumber": 0,
