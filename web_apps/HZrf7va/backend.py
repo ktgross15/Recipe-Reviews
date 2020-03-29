@@ -1,5 +1,5 @@
 import numpy as np
-import datikuapi
+import dataikuapi
 
 from bokeh.io import curdoc
 from bokeh.layouts import row, widgetbox
