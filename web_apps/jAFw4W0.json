@@ -2,7 +2,7 @@
   "type": "STANDARD",
   "hasLegacyBackendURL": false,
   "params": {
-    "backendEnabled": false,
+    "backendEnabled": true,
     "enableJavascriptModules": false,
     "autoStartBackend": false,
     "hideJSSecurityPanel": false,
@@ -36,11 +36,11 @@
   "name": "Recipes - Interactive Scoring",
   "apiKey": "o9UDCc1D9PM2wjCKvP3DzEfgdwPr0uB7",
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585520866799
+    "lastModifiedOn": 1585520973752
   },
   "creationTag": {
     "versionNumber": 0,
