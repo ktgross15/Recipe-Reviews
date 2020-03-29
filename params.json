@@ -35,7 +35,22 @@
     }
   },
   "owner": "ktgross15",
-  "permissions": [],
+  "permissions": [
+    {
+      "group": "administrators",
+      "admin": true,
+      "readProjectContent": false,
+      "writeProjectContent": true,
+      "exportDatasetsData": true,
+      "readDashboards": false,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false
+    }
+  ],
   "additionalDashboardUsers": {
     "users": []
   },
@@ -49,7 +64,9 @@
     },
     "flowBuildSettings": {
       "mergeSparkPipelines": false,
-      "pruneBeforeSparkPipelines": true
+      "pruneBeforeSparkPipelines": true,
+      "mergeSqlPipelines": false,
+      "pruneBeforeSqlPipelines": true
     },
     "limitsSettings": {
       "memSampleBytes": {
@@ -112,7 +129,30 @@
     "cluster": {
       "clusterMode": "INHERIT"
     },
-    "path": "/"
+    "k8sCluster": {
+      "clusterMode": "INHERIT"
+    },
+    "virtualWebAppBackendSettings": {
+      "mode": "INHERIT",
+      "preventOverride": false,
+      "infra": {
+        "containerSelection": {
+          "containerMode": "INHERIT"
+        },
+        "overrideGlobalK8sExposition": false,
+        "exposition": {
+          "type": "local_process",
+          "params": {}
+        },
+        "scaling": {
+          "initialReplicas": 1,
+          "hpa": false,
+          "hpaTargetCPUPercent": 0,
+          "hpaMinPods": 0,
+          "hpaMaxPods": 0
+        }
+      }
+    }
   },
   "name": "Food Recipes",
   "imgPattern": 6,
@@ -171,11 +211,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 88,
+    "versionNumber": 89,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1563370463647
+    "lastModifiedOn": 1585519149029
   },
   "creationTag": {
     "versionNumber": 0,
@@ -189,10 +229,10 @@
     "imported"
   ],
   "customFields": {
-    "gdpr_forbid_dataset_sharing": false,
     "gdpr_forbid_dataset_export": false,
+    "gdpr_forbid_uploaded_datasets": false,
     "gdpr_forbid_model_creation": false,
-    "gdpr_forbid_uploaded_datasets": false
+    "gdpr_forbid_dataset_sharing": false
   },
   "checklists": {
     "checklists": [
