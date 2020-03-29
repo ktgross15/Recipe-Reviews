@@ -12,7 +12,8 @@
     "nbProcesses": 1,
     "libraries": [
       "jquery",
-      "dataiku"
+      "dataiku",
+      "d3"
     ],
     "infra": {
       "containerSelection": {
@@ -36,11 +37,11 @@
   "name": "Recipes - Interactive Scoring",
   "apiKey": "o9UDCc1D9PM2wjCKvP3DzEfgdwPr0uB7",
   "versionTag": {
-    "versionNumber": 3,
+    "versionNumber": 4,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585521031575
+    "lastModifiedOn": 1585521092556
   },
   "creationTag": {
     "versionNumber": 0,
