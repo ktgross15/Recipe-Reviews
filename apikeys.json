@@ -41,5 +41,27 @@
     "key": "nMvF7Gagupqy4MoJ4e088kHbc7ExZ3Qi",
     "label": "webapp - new key",
     "createdOn": 1585519190374
+  },
+  {
+    "execSQLLike": false,
+    "localDatasets": [],
+    "projectPrivileges": {
+      "admin": false,
+      "readProjectContent": false,
+      "writeProjectContent": false,
+      "exportDatasetsData": false,
+      "readDashboards": false,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false
+    },
+    "onBehalf": "CGHGdEZ",
+    "id": "UtJNhG5V40KL5dCU",
+    "key": "d1FnME0p1ZaMHlBM9qApwPM1DA8NDyVk",
+    "label": "Key for Web app Recipe Ratings(CGHGdEZ)",
+    "createdOn": 1585520619657
   }
 ]
