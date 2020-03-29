@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "execSQLLike": false,
+    "localDatasets": [],
+    "projectPrivileges": {
+      "admin": false,
+      "readProjectContent": false,
+      "writeProjectContent": false,
+      "exportDatasetsData": false,
+      "readDashboards": false,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false
+    },
+    "onBehalf": "rtBDmxM",
+    "id": "xpY0SfSC9BRvLVO7",
+    "key": "6S8kLKa1WpUTjfgtOoWpWlCNWDtrHbg3",
+    "label": "Key for Web app Recipe Review Prediction(rtBDmxM)",
+    "createdOn": 1585518731319
+  }
+]
