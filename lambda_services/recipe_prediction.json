@@ -1,9 +1,29 @@
 {
+  "name": "recipe_prediction",
   "endpoints": [
     {
       "modelRef": "s8ZCRTbJ",
       "useJava": true,
-      "testQueries": [],
+      "testQueries": [
+        {
+          "name": "test #1",
+          "q": {
+            "features": {
+              "name": "Honey-Garlic Slow Cooker Chicken Thighs",
+              "author": "Myrna",
+              "site": "All Recipes",
+              "ingredients": "skinless boneless chicken thigh cup soy sauc cup ketchup cup honey clove garlic minc teaspoon dri basil",
+              "directions": "lay chicken thigh bottom quart slow cooker n whisk soy sauc ketchup honey garlic basil togeth bowl pour chicken n cook low hour n",
+              "description": "use often easi use pantri stapl alway hit adult kid serv basmati rice quinoa steam roast veget",
+              "description_len": 162,
+              "calories": 325,
+              "num_reviews": 2000,
+              "rating": 4,
+              "rating_40+": 0
+            }
+          }
+        }
+      ],
       "enrichMapping": [],
       "healthCheckQueries": [],
       "id": "end1",
