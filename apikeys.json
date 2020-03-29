@@ -20,5 +20,26 @@
     "key": "6S8kLKa1WpUTjfgtOoWpWlCNWDtrHbg3",
     "label": "Key for Web app Recipe Review Prediction(rtBDmxM)",
     "createdOn": 1585518731319
+  },
+  {
+    "execSQLLike": false,
+    "localDatasets": [],
+    "projectPrivileges": {
+      "admin": true,
+      "readProjectContent": true,
+      "writeProjectContent": false,
+      "exportDatasetsData": true,
+      "readDashboards": true,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false
+    },
+    "id": "jWxoXHeroULc85Wy",
+    "key": "nMvF7Gagupqy4MoJ4e088kHbc7ExZ3Qi",
+    "label": "webapp - new key",
+    "createdOn": 1585519190374
   }
 ]
