@@ -9,6 +9,9 @@ SAMPLE_SIZE = 10000
 THRESHOLD_CARDINALITY = 100
 model_id = 's8ZCRTbJ'
 
+#make this an input visually later
+dataset_name = 'train'
+
 
 model = dataiku.Model(model_id)
 predictor = model.get_predictor()
@@ -32,7 +35,8 @@ def get_categoricals(dataset, schema):
 
 @app.route('/get-dataset-schema')
 def get_dataset_schema():
-    dataset = dataiku.Dataset(request.args.get('dataset_name'))
+    # dataset = dataiku.Dataset(request.args.get('dataset_name'))
+    dataset = dataiku.Dataset('train')
     schema = dataset.read_schema()
     default_values = dataset.get_dataframe(limit=1)
     schema = get_categoricals(dataset, schema)
