@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/static/public/styles/1.0.0/dku-styles.css" />
+<!-- <link rel="stylesheet" href="/static/public/styles/1.0.0/dku-styles.css" />
 
 <h1>Welcome to your webapp</h1>
 
@@ -129,3 +129,71 @@
         </tbody>
     </table>
 </section>
+ -->
+
+<!-- Retrieves dataiku starter stylesheets -->
+<link rel="stylesheet" href="/static/public/styles/1.0.0/dku-styles.css" />
+
+<h3 class="no-inputs-warning"> Please choose a model and a dataset in the settings section. </h3>
+
+<div class="main-container">
+    <section class="left-block">
+        <div class="block-header">
+            <button class="main-blue-button scoring__button" id="scoring-button">Score</button>
+            <h2>Features</h2>
+            <hr>
+        </div>
+        <div class="block-body">
+            <form class="scoring-form" id="scoring-json-form">
+                <div class="field">
+                    <label for="scoring-textarea">Raw JSON</label>
+                    <textarea class="scoring__textarea" id="scoring-textarea"></textarea>
+                </div>
+            </form>
+            <form class="scoring-form" id="scoring-form"></form>
+
+        <button id="scoring-mode" class="text-button">Switch to form view</button>
+        </div>
+    </section>
+    <section class="right-block">
+        <div class="block-header">
+            <button id="clear-results" class="text-blue-button">Clear</button>
+            <h2>Results</h2>
+            <hr>
+        </div>
+        <div id="results" class="block-body">
+            <h4 id="message"></h4>
+            <div class="results-placeholder">Nothing scored yet</div>
+            <table class="results-table" id="two-class-table">
+                <thead>
+                    <tr>
+                        <th>Launched on</th>
+                        <th>Probability to be <span id="class-0"></span></th>
+                        <th>Probability to be <span id="class-1"></span></th>
+                        <th>Prediction</th>
+                    </tr>
+                </thead>
+                <tbody id="two-class-table-content"></tbody>
+            </table>
+            <table class="results-table" id="multi-class-table">
+                <thead>
+                    <tr>
+                        <th>Launched on</th>
+                        <th>Prediction</th>
+                        <th>Probability</th>
+                    </tr>
+                </thead>
+                <tbody id="multi-class-table-content"></tbody>
+            </table>
+            <table class="results-table" id="regression-table">
+                <thead>
+                    <tr>
+                        <th>Launched on</th>
+                        <th>Prediction</th>
+                    </tr>
+                </thead>
+                <tbody id="regression-table-content"></tbody>
+            </table>
+        </div>
+    </section>
+</div>

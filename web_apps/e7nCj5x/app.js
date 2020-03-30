@@ -1,66 +1,69 @@
-<!-- Retrieves dataiku starter stylesheets -->
-<link rel="stylesheet" href="/static/public/styles/1.0.0/dku-styles.css" />
+/*
+ * For more information, refer to the "Javascript API" documentation:
+ * https://doc.dataiku.com/dss/latest/api/js/index.html
+ */
 
-<h3 class="no-inputs-warning"> Please choose a model and a dataset in the settings section. </h3>
+let exportButton = document.getElementById('export-button');
 
-<div class="main-container">
-    <section class="left-block">
-        <div class="block-header">
-            <button class="main-blue-button scoring__button" id="scoring-button">Score</button>
-            <h2>Features</h2>
-            <hr>
-        </div>
-        <div class="block-body">
-            <form class="scoring-form" id="scoring-json-form">
-                <div class="field">
-                    <label for="scoring-textarea">Raw JSON</label>
-                    <textarea class="scoring__textarea" id="scoring-textarea"></textarea>
-                </div>
-            </form>
-            <form class="scoring-form" id="scoring-form"></form>
+exportButton.addEventListener('click', function (event) {
+    let analysisName = document.getElementById('analysis-name');
+    let analysisValue = analysisName.value || '(no analysis name typed)';
+    let datasetName = document.getElementById('dataset-name');
+    let datasetValue = datasetName.value || '(no dataset chosen)';
+    let datasetColumn = document.getElementById('dataset-column');
+    let columnValue = datasetColumn.value || '(no column chosen)';
+    let rowsLimitValue = document.getElementById('rows-limit').checked;
+    let exportValue = document.querySelector('input[name="export"]:checked').value || '(no export format typed)';
 
-        <button id="scoring-mode" class="text-button">Switch to form view</button>
-        </div>
-    </section>
-    <section class="right-block">
-        <div class="block-header">
-            <button id="clear-results" class="text-blue-button">Clear</button>
-            <h2>Results</h2>
-            <hr>
-        </div>
-        <div id="results" class="block-body">
-            <h4 id="message"></h4>
-            <div class="results-placeholder">Nothing scored yet</div>
-            <table class="results-table" id="two-class-table">
-                <thead>
-                    <tr>
-                        <th>Launched on</th>
-                        <th>Probability to be <span id="class-0"></span></th>
-                        <th>Probability to be <span id="class-1"></span></th>
-                        <th>Prediction</th>
-                    </tr>
-                </thead>
-                <tbody id="two-class-table-content"></tbody>
-            </table>
-            <table class="results-table" id="multi-class-table">
-                <thead>
-                    <tr>
-                        <th>Launched on</th>
-                        <th>Prediction</th>
-                        <th>Probability</th>
-                    </tr>
-                </thead>
-                <tbody id="multi-class-table-content"></tbody>
-            </table>
-            <table class="results-table" id="regression-table">
-                <thead>
-                    <tr>
-                        <th>Launched on</th>
-                        <th>Prediction</th>
-                    </tr>
-                </thead>
-                <tbody id="regression-table-content"></tbody>
-            </table>
-        </div>
-    </section>
-</div>
+    alert('Now YOU should code something if you really want an export. For now, your parameters are: ' + analysisValue + ' / ' + datasetValue  + ' / ' + columnValue + ' / ' + rowsLimitValue + ' / ' + exportValue);
+    event.preventDefault();
+});
+
+/* Fetch dataset sample */
+let fetchButton = document.getElementById('fetch-button');
+let datasetName = document.getElementById('dataset-name');
+let messageContainer = document.getElementById('message');
+let selectedDataset = {};
+
+function displayMessage(messageText, messageClassname) {
+    messageContainer.innerHTML = messageText;
+    messageContainer.className = '';
+    if (messageClassname && messageClassname.length > 0) {
+        messageContainer.className = messageClassname;
+    }
+}
+
+function clearMessage() {
+    displayMessage('');
+}
+
+function displayFailure() {
+    displayMessage('The dataset cannot be retrieved. Please check the dataset name or the API Key\'s permissions in the "Settings" tab of the webapp.', 'error-message');
+}
+
+function displayDataFrame(dataFrame) {
+    let columnsNames = dataFrame.getColumnNames();
+    let line = '------------------------------';
+    let text = selectedDataset.name + '\n'
+        + line + '\n'
+        + dataFrame.getNbRows() + ' Rows\n'
+        + columnsNames.length + ' Columns\n'
+        + '\n' + line + '\n'
+        + 'Columns names: \n';
+    columnsNames.forEach(function(columnName) {
+        text += columnName + ', ';
+    });
+    displayMessage(text);
+}
+
+fetchButton.addEventListener('click', function(event) {
+    clearMessage();
+    selectedDataset.name = document.getElementById('dataset-to-fetch').value;
+    dataiku.fetch(selectedDataset.name, function(dataFrame) {
+        selectedDataset.dataFrame = dataFrame;
+        displayDataFrame(dataFrame);
+    }, function() {
+        displayFailure();
+    });
+    return false;
+});
