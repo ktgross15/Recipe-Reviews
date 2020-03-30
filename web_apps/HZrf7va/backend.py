@@ -18,10 +18,10 @@ prediction = client.predict_record("end1", record)
 print(prediction["result"])
 
 # Set up layouts and add to document
-inputs = widgetbox(ingredients)
+# inputs = widgetbox(ingredients)
 
-curdoc().add_root(row(inputs, plot, width=800))
-curdoc().title = "Sliders"
+# curdoc().add_root(row(inputs, plot, width=800))
+# curdoc().title = "Sliders"
 
 # # Set up data
 # N = 200
