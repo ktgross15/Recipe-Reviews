@@ -324,5 +324,27 @@
     "key": "o9UDCc1D9PM2wjCKvP3DzEfgdwPr0uB7",
     "label": "Key for Web app Recipes - Interactive Scoring(jAFw4W0)",
     "createdOn": 1585520866649
+  },
+  {
+    "execSQLLike": false,
+    "localDatasets": [],
+    "projectPrivileges": {
+      "admin": false,
+      "readProjectContent": false,
+      "writeProjectContent": false,
+      "exportDatasetsData": false,
+      "readDashboards": false,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false
+    },
+    "onBehalf": "e7nCj5x",
+    "id": "Wvv5x8ypoXqPAC3E",
+    "key": "6bqr9I4fot3MWJwMqSSpBR3ldxhK2E1O",
+    "label": "Key for Web app Interactive Scoring - no python(e7nCj5x)",
+    "createdOn": 1585582445944
   }
 ]
