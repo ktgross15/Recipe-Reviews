@@ -293,18 +293,20 @@ function updateDefaultValuesFromForm() {
 }
 
 
-// function switchScoringMode() {
-//     formFeatures = !formFeatures;
-//     if (formFeatures) {
-//         scoringModeLink.innerHTML = 'Switch to JSON view';
-//         scoringJsonForm.style.display = 'none';
-//         scoringForm.style.display = 'block';
-//     } else {
-//         scoringModeLink.innerHTML = 'Switch to form view';
-//         scoringJsonForm.style.display = 'block';
-//         scoringForm.style.display = 'none';
-//     }
-// }
+function switchScoringMode() {
+    formFeatures = !formFeatures;
+    scoringJsonForm.style.display = 'none';
+    scoringForm.style.display = 'block';
+    // if (formFeatures) {
+    //     scoringModeLink.innerHTML = 'Switch to JSON view';
+    //     scoringJsonForm.style.display = 'none';
+    //     scoringForm.style.display = 'block';
+    // } else {
+    //     scoringModeLink.innerHTML = 'Switch to form view';
+    //     scoringJsonForm.style.display = 'block';
+    //     scoringForm.style.display = 'none';
+    // }
+}
 
 
 function clearResults() {
