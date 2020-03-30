@@ -13,7 +13,7 @@ const scoringUrl = getWebAppBackendUrl('score');
 let datasetSchemaUrl;
 let datasetSchema;
 let defaultValues;
-let formFeatures = false;
+// let formFeatures = false;
 let dateFormatOptions = {
     year: 'numeric',
     month: 'short',
@@ -293,18 +293,18 @@ function updateDefaultValuesFromForm() {
 }
 
 
-function switchScoringMode() {
-    formFeatures = !formFeatures;
-    if (formFeatures) {
-        scoringModeLink.innerHTML = 'Switch to JSON view';
-        scoringJsonForm.style.display = 'none';
-        scoringForm.style.display = 'block';
-    } else {
-        scoringModeLink.innerHTML = 'Switch to form view';
-        scoringJsonForm.style.display = 'block';
-        scoringForm.style.display = 'none';
-    }
-}
+// function switchScoringMode() {
+//     formFeatures = !formFeatures;
+//     if (formFeatures) {
+//         scoringModeLink.innerHTML = 'Switch to JSON view';
+//         scoringJsonForm.style.display = 'none';
+//         scoringForm.style.display = 'block';
+//     } else {
+//         scoringModeLink.innerHTML = 'Switch to form view';
+//         scoringJsonForm.style.display = 'block';
+//         scoringForm.style.display = 'none';
+//     }
+// }
 
 
 function clearResults() {
@@ -324,10 +324,3 @@ clearResultsLink.addEventListener('click', clearResults);
 
 updateSample();
 switchScoringMode();
-
-// if (inputModelId && inputDatasetName) {
-//     updateSample()
-//     switchScoringMode();
-// } else {
-//     document.querySelector('body').classList.add('no-inputs');
-// }
