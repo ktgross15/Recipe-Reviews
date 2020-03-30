@@ -14,7 +14,6 @@ let datasetSchemaUrl;
 let datasetSchema;
 let defaultValues;
 let formFeatures = false;
-let persistResults = dataiku.getWebAppConfig()['input_history'];
 let dateFormatOptions = {
     year: 'numeric',
     month: 'short',
@@ -23,8 +22,9 @@ let dateFormatOptions = {
     minute: '2-digit'
 };
 
-let inputModelId = 's8ZCRTbJ'
-let inputDatasetName = 'train'
+let persistResults = true;
+let inputModelId = 's8ZCRTbJ';
+let inputDatasetName = 'train';
 
 // HELPERS
 
