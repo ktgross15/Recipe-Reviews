@@ -17,7 +17,6 @@ record = {'ingredients': ingredients}
 prediction = client.predict_record("end1", record)
 result = prediction["result"]
 print(result)
-return result
 
 # Set up layouts and add to document
 # inputs = widgetbox(ingredients)
