@@ -15,7 +15,9 @@ description = TextInput(title="Ingredients", value='enter ingredients')
 ingredients = 'skinless boneless chicken thigh cup soy sauc cup ketchup cup honey clove garlic minc teaspoon dri basil'
 record = {'ingredients': ingredients}
 prediction = client.predict_record("end1", record)
-print(prediction["result"])
+result = prediction["result"]
+print(result)
+return result
 
 # Set up layouts and add to document
 # inputs = widgetbox(ingredients)
