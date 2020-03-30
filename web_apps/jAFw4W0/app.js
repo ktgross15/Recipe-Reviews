@@ -13,7 +13,7 @@ const scoringUrl = getWebAppBackendUrl('score');
 let datasetSchemaUrl;
 let datasetSchema;
 let defaultValues;
-// let formFeatures = false;
+let formFeatures = false;
 let dateFormatOptions = {
     year: 'numeric',
     month: 'short',
