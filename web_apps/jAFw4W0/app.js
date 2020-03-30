@@ -22,7 +22,7 @@ let dateFormatOptions = {
     minute: '2-digit'
 };
 
-let persistResults = true;
+let persistResults = false;
 let inputModelId = 's8ZCRTbJ';
 let inputDatasetName = 'train_prepared';
 
