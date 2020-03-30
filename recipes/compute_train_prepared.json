@@ -8,7 +8,11 @@
         "readParams": {
           "mode": "AUTO",
           "autoModeRepartitionInto": 10,
-          "map": {}
+          "map": {
+            "train": {
+              "repartition": 10
+            }
+          }
         },
         "useGlobalMetastore": false,
         "useNativeProcessors": true,
@@ -65,11 +69,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585585066786
+    "lastModifiedOn": 1585585126718
   },
   "creationTag": {
     "versionNumber": 0,

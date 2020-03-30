@@ -25,8 +25,30 @@
     "autoRefreshSample": false
   },
   "explorationFilters": [],
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "description",
+          "directions",
+          "num_reviews",
+          "rating",
+          "rating_40+"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -34,7 +56,19 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "site": 100,
+    "directions": 300,
+    "description_len": 128,
+    "author": 197,
+    "name": 300,
+    "rating": 100,
+    "rating_40+": 100,
+    "ingredients": 300,
+    "description": 300,
+    "num_reviews": 100,
+    "calories": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
