@@ -58,6 +58,32 @@ function computeTwoClassScoringDetails(row, records) {
 //     return details.replace(/\n/g, "<br>");
 // }
 
+// function displayTwoClassResults(rows, records) {
+//     resultsContainer.className += ' two-class-scoring--visible';
+
+//     rows.forEach(row => {
+//         let summaryRow = document.createElement('tr');
+//         let detailsRow = document.createElement('tr');
+//         summaryRow.classList.add('result-summary');
+//         detailsRow.classList.add('result-details');
+//         rowContent = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td>`;
+//         Object.keys(row.probas).forEach((proba, index) => {
+//             let domColumnValue = document.querySelector('#class-' + index);
+//             domColumnValue.innerHTML = proba;
+//             rowContent += `<td>${row.probas[proba]}</td>`;
+//         });
+//         rowContent += `<td><strong>${row.prediction}</strong></td>`;
+//         summaryRow.innerHTML = rowContent;
+//         detailsRow.innerHTML = computeTwoClassScoringDetails(row, records);
+//         twoClassResultsBody.insertAdjacentElement('afterbegin', detailsRow);
+//         twoClassResultsBody.insertAdjacentElement('afterbegin', summaryRow);
+//         summaryRow.addEventListener('click', () => {
+//             summaryRow.classList.toggle('result-details--visible');
+//         });
+//     })
+//     clearResultsLink.style.display = 'block';
+// }
+
 function displayTwoClassResults(rows, records) {
     resultsContainer.className += ' two-class-scoring--visible';
 
