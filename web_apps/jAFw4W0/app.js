@@ -1,7 +1,7 @@
 const messageContainer = document.getElementById('message');
 const clearResultsLink = document.getElementById('clear-results');
 const resultsContainer = document.getElementById('results');
-// const scoringModeLink = document.getElementById('scoring-mode');
+const scoringModeLink = document.getElementById('scoring-mode');
 const twoClassResultsBody = document.getElementById('two-class-table-content');
 const multiClassResultsBody = document.getElementById('multi-class-table-content');
 const regressionResultsBody = document.getElementById('regression-table-content');
