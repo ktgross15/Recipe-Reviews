@@ -3,8 +3,8 @@ const clearResultsLink = document.getElementById('clear-results');
 const resultsContainer = document.getElementById('results');
 // const scoringModeLink = document.getElementById('scoring-mode');
 const twoClassResultsBody = document.getElementById('two-class-table-content');
-// const multiClassResultsBody = document.getElementById('multi-class-table-content');
-// const regressionResultsBody = document.getElementById('regression-table-content');
+const multiClassResultsBody = document.getElementById('multi-class-table-content');
+const regressionResultsBody = document.getElementById('regression-table-content');
 const scoringJsonForm = document.getElementById('scoring-json-form');
 const scoringForm = document.getElementById('scoring-form');
 const scoringButton = document.getElementById('scoring-button');
@@ -23,7 +23,8 @@ let dateFormatOptions = {
 };
 
 let persistResults = false;
-let inputModelId = 's8ZCRTbJ';
+// let inputModelId = 's8ZCRTbJ';
+let inputModelId = 'zGpQfCAv';
 let inputDatasetName = 'train_prepared';
 
 // HELPERS
@@ -38,51 +39,25 @@ function computeTwoClassScoringDetails(row, records) {
     return details.replace(/\n/g, "<br>");
 }
 
-// function computeMultiClassScoringDetails(row, records) {
-//     let details = `<td colspan="4"><strong>Model:</strong> ${inputModelId}
-//     <strong>Dataset:</strong> ${inputDatasetName}
-//     <strong>Full results</strong>
-//     <pre><code>${JSON.stringify(row.probas, undefined, 1)}</code></pre>
-//     <strong>Features</strong>
-//     <pre><code>${JSON.stringify(records, undefined, 1)}</code></pre>
-//     </td>`;
-//     return details.replace(/\n/g, "<br>");
-// }
+function computeMultiClassScoringDetails(row, records) {
+    let details = `<td colspan="4"><strong>Model:</strong> ${inputModelId}
+    <strong>Dataset:</strong> ${inputDatasetName}
+    <strong>Full results</strong>
+    <pre><code>${JSON.stringify(row.probas, undefined, 1)}</code></pre>
+    <strong>Features</strong>
+    <pre><code>${JSON.stringify(records, undefined, 1)}</code></pre>
+    </td>`;
+    return details.replace(/\n/g, "<br>");
+}
 
-// function computeRegressionScoringDetails(row, records) {
-//     let details = `<td colspan="4"><strong>Model:</strong> ${inputModelId}
-//     <strong>Dataset:</strong> ${inputDatasetName}
-//     <strong>Features</strong>
-//     <pre><code>${JSON.stringify(records, undefined, 1)}</code></pre>
-//     </td>`;
-//     return details.replace(/\n/g, "<br>");
-// }
-
-// function displayTwoClassResults(rows, records) {
-//     resultsContainer.className += ' two-class-scoring--visible';
-
-//     rows.forEach(row => {
-//         let summaryRow = document.createElement('tr');
-//         let detailsRow = document.createElement('tr');
-//         summaryRow.classList.add('result-summary');
-//         detailsRow.classList.add('result-details');
-//         rowContent = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td>`;
-//         Object.keys(row.probas).forEach((proba, index) => {
-//             let domColumnValue = document.querySelector('#class-' + index);
-//             domColumnValue.innerHTML = proba;
-//             rowContent += `<td>${row.probas[proba]}</td>`;
-//         });
-//         rowContent += `<td><strong>${row.prediction}</strong></td>`;
-//         summaryRow.innerHTML = rowContent;
-//         detailsRow.innerHTML = computeTwoClassScoringDetails(row, records);
-//         twoClassResultsBody.insertAdjacentElement('afterbegin', detailsRow);
-//         twoClassResultsBody.insertAdjacentElement('afterbegin', summaryRow);
-//         summaryRow.addEventListener('click', () => {
-//             summaryRow.classList.toggle('result-details--visible');
-//         });
-//     })
-//     clearResultsLink.style.display = 'block';
-// }
+function computeRegressionScoringDetails(row, records) {
+    let details = `<td colspan="4"><strong>Model:</strong> ${inputModelId}
+    <strong>Dataset:</strong> ${inputDatasetName}
+    <strong>Features</strong>
+    <pre><code>${JSON.stringify(records, undefined, 1)}</code></pre>
+    </td>`;
+    return details.replace(/\n/g, "<br>");
+}
 
 function displayTwoClassResults(rows, records) {
     resultsContainer.className += ' two-class-scoring--visible';
@@ -110,51 +85,77 @@ function displayTwoClassResults(rows, records) {
     clearResultsLink.style.display = 'block';
 }
 
-// function displayMultiClassResults(rows, records) {
-//     resultsContainer.className += ' multi-class-scoring--visible';
+function displayTwoClassResults(rows, records) {
+    resultsContainer.className += ' two-class-scoring--visible';
 
-//     if (persistResults === false) {
-//         multiClassResultsBody.innerHTML = '';
-//     }
+    rows.forEach(row => {
+        let summaryRow = document.createElement('tr');
+        let detailsRow = document.createElement('tr');
+        summaryRow.classList.add('result-summary');
+        detailsRow.classList.add('result-details');
+        rowContent = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td>`;
+        Object.keys(row.probas).forEach((proba, index) => {
+            let domColumnValue = document.querySelector('#class-' + index);
+            domColumnValue.innerHTML = proba;
+            rowContent += `<td>${row.probas[proba]}</td>`;
+        });
+        rowContent += `<td><strong>${row.prediction}</strong></td>`;
+        summaryRow.innerHTML = rowContent;
+        detailsRow.innerHTML = computeTwoClassScoringDetails(row, records);
+        twoClassResultsBody.insertAdjacentElement('afterbegin', detailsRow);
+        twoClassResultsBody.insertAdjacentElement('afterbegin', summaryRow);
+        summaryRow.addEventListener('click', () => {
+            summaryRow.classList.toggle('result-details--visible');
+        });
+    })
+    clearResultsLink.style.display = 'block';
+}
 
-//     rows.forEach(row => {
-//         let summaryRow = document.createElement('tr');
-//         let detailsRow = document.createElement('tr');
-//         summaryRow.classList.add('result-summary');
-//         detailsRow.classList.add('result-details');
-//         summaryRow.innerHTML = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td><td><strong>${row.prediction}</strong></td><td>${row.probas[row.prediction]}</td>`;
-//         detailsRow.innerHTML = computeMultiClassScoringDetails(row, records);
-//         multiClassResultsBody.insertAdjacentElement('afterbegin', detailsRow);
-//         multiClassResultsBody.insertAdjacentElement('afterbegin', summaryRow);
-//         summaryRow.addEventListener('click', () => {
-//             summaryRow.classList.toggle('result-details--visible');
-//         });
-//     })
-//     clearResultsLink.style.display = 'block';
-// }
+function displayMultiClassResults(rows, records) {
+    resultsContainer.className += ' multi-class-scoring--visible';
 
-// function displayRegressionResults(rows, records) {
-//     resultsContainer.className += ' regression-scoring--visible';
+    if (persistResults === false) {
+        multiClassResultsBody.innerHTML = '';
+    }
 
-//     if (persistResults === false) {
-//         regressionResultsBody.innerHTML = '';
-//     }
+    rows.forEach(row => {
+        let summaryRow = document.createElement('tr');
+        let detailsRow = document.createElement('tr');
+        summaryRow.classList.add('result-summary');
+        detailsRow.classList.add('result-details');
+        summaryRow.innerHTML = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td><td><strong>${row.prediction}</strong></td><td>${row.probas[row.prediction]}</td>`;
+        detailsRow.innerHTML = computeMultiClassScoringDetails(row, records);
+        multiClassResultsBody.insertAdjacentElement('afterbegin', detailsRow);
+        multiClassResultsBody.insertAdjacentElement('afterbegin', summaryRow);
+        summaryRow.addEventListener('click', () => {
+            summaryRow.classList.toggle('result-details--visible');
+        });
+    })
+    clearResultsLink.style.display = 'block';
+}
 
-//     rows.forEach(row => {
-//         let summaryRow = document.createElement('tr');
-//         let detailsRow = document.createElement('tr');
-//         summaryRow.classList.add('result-summary');
-//         detailsRow.classList.add('result-details');
-//         summaryRow.innerHTML = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td><td><strong>${row.prediction}</strong></td>`;
-//         detailsRow.innerHTML = computeRegressionScoringDetails(row, records);
-//         regressionResultsBody.insertAdjacentElement('afterbegin', detailsRow);
-//         regressionResultsBody.insertAdjacentElement('afterbegin', summaryRow);
-//         summaryRow.addEventListener('click', () => {
-//             summaryRow.classList.toggle('result-details--visible');
-//         });
-//     })
-//     clearResultsLink.style.display = 'block';
-// }
+function displayRegressionResults(rows, records) {
+    resultsContainer.className += ' regression-scoring--visible';
+
+    if (persistResults === false) {
+        regressionResultsBody.innerHTML = '';
+    }
+
+    rows.forEach(row => {
+        let summaryRow = document.createElement('tr');
+        let detailsRow = document.createElement('tr');
+        summaryRow.classList.add('result-summary');
+        detailsRow.classList.add('result-details');
+        summaryRow.innerHTML = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td><td><strong>${row.prediction}</strong></td>`;
+        detailsRow.innerHTML = computeRegressionScoringDetails(row, records);
+        regressionResultsBody.insertAdjacentElement('afterbegin', detailsRow);
+        regressionResultsBody.insertAdjacentElement('afterbegin', summaryRow);
+        summaryRow.addEventListener('click', () => {
+            summaryRow.classList.toggle('result-details--visible');
+        });
+    })
+    clearResultsLink.style.display = 'block';
+}
 
 function displayResults(predictionData, records) {
     resultsContainer.className += ' results-table--visible';
