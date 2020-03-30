@@ -23,8 +23,8 @@ let dateFormatOptions = {
     minute: '2-digit'
 };
 
-let inputModelId = dataiku.getWebAppConfig()['input_model'];
-let inputDatasetName = dataiku.getWebAppConfig()['input_dataset']
+let inputModelId = 's8ZCRTbJ'
+let inputDatasetName = 'train'
 
 // HELPERS
 
