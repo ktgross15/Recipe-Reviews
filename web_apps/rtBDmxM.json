@@ -36,11 +36,11 @@
   "name": "Recipe Review Prediction",
   "apiKey": "nMvF7Gagupqy4MoJ4e088kHbc7ExZ3Qi",
   "versionTag": {
-    "versionNumber": 9,
+    "versionNumber": 10,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585581160486
+    "lastModifiedOn": 1585581167526
   },
   "creationTag": {
     "versionNumber": 0,
