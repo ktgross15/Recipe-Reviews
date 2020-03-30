@@ -29,32 +29,32 @@ let inputDatasetName = 'train';
 // HELPERS
 
 function computeTwoClassScoringDetails(row, records) {
-    let details = '<td colspan="4"><strong>Model:</strong> ${inputModelId}
+    let details = `<td colspan="4"><strong>Model:</strong> ${inputModelId}
     <strong>Dataset:</strong> ${inputDatasetName}
     <strong>Percentile:</strong> ${row.probaPercentile}
     <strong>Features</strong>
     <pre><code>${JSON.stringify(records, undefined, 1)}</code></pre>
-    </td>';
+    </td>`;
     return details.replace(/\n/g, "<br>");
 }
 
 function computeMultiClassScoringDetails(row, records) {
-    let details = '<td colspan="4"><strong>Model:</strong> ${inputModelId}
+    let details = `<td colspan="4"><strong>Model:</strong> ${inputModelId}
     <strong>Dataset:</strong> ${inputDatasetName}
     <strong>Full results</strong>
     <pre><code>${JSON.stringify(row.probas, undefined, 1)}</code></pre>
     <strong>Features</strong>
     <pre><code>${JSON.stringify(records, undefined, 1)}</code></pre>
-    </td>';
+    </td>`;
     return details.replace(/\n/g, "<br>");
 }
 
 function computeRegressionScoringDetails(row, records) {
-    let details = '<td colspan="4"><strong>Model:</strong> ${inputModelId}
+    let details = `<td colspan="4"><strong>Model:</strong> ${inputModelId}
     <strong>Dataset:</strong> ${inputDatasetName}
     <strong>Features</strong>
     <pre><code>${JSON.stringify(records, undefined, 1)}</code></pre>
-    </td>';
+    </td>`;
     return details.replace(/\n/g, "<br>");
 }
 
@@ -66,17 +66,40 @@ function displayTwoClassResults(rows, records) {
         let detailsRow = document.createElement('tr');
         summaryRow.classList.add('result-summary');
         detailsRow.classList.add('result-details');
-        rowContent = '<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td>';
+        rowContent = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td>`;
         Object.keys(row.probas).forEach((proba, index) => {
             let domColumnValue = document.querySelector('#class-' + index);
             domColumnValue.innerHTML = proba;
-            rowContent += '<td>${row.probas[proba]}</td>';
+            rowContent += `<td>${row.probas[proba]}</td>`;
         });
-        rowContent += '<td><strong>${row.prediction}</strong></td>'';
+        rowContent += `<td><strong>${row.prediction}</strong></td>`;
         summaryRow.innerHTML = rowContent;
         detailsRow.innerHTML = computeTwoClassScoringDetails(row, records);
         twoClassResultsBody.insertAdjacentElement('afterbegin', detailsRow);
         twoClassResultsBody.insertAdjacentElement('afterbegin', summaryRow);
+        summaryRow.addEventListener('click', () => {
+            summaryRow.classList.toggle('result-details--visible');
+        });
+    })
+    clearResultsLink.style.display = 'block';
+}
+
+function displayMultiClassResults(rows, records) {
+    resultsContainer.className += ' multi-class-scoring--visible';
+
+    if (persistResults === false) {
+        multiClassResultsBody.innerHTML = '';
+    }
+
+    rows.forEach(row => {
+        let summaryRow = document.createElement('tr');
+        let detailsRow = document.createElement('tr');
+        summaryRow.classList.add('result-summary');
+        detailsRow.classList.add('result-details');
+        summaryRow.innerHTML = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td><td><strong>${row.prediction}</strong></td><td>${row.probas[row.prediction]}</td>`;
+        detailsRow.innerHTML = computeMultiClassScoringDetails(row, records);
+        multiClassResultsBody.insertAdjacentElement('afterbegin', detailsRow);
+        multiClassResultsBody.insertAdjacentElement('afterbegin', summaryRow);
         summaryRow.addEventListener('click', () => {
             summaryRow.classList.toggle('result-details--visible');
         });
@@ -96,7 +119,7 @@ function displayRegressionResults(rows, records) {
         let detailsRow = document.createElement('tr');
         summaryRow.classList.add('result-summary');
         detailsRow.classList.add('result-details');
-        summaryRow.innerHTML = '<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td><td><strong>${row.prediction}</strong></td>';
+        summaryRow.innerHTML = `<td>${new Date().toLocaleString('en-us', dateFormatOptions)}</td><td><strong>${row.prediction}</strong></td>`;
         detailsRow.innerHTML = computeRegressionScoringDetails(row, records);
         regressionResultsBody.insertAdjacentElement('afterbegin', detailsRow);
         regressionResultsBody.insertAdjacentElement('afterbegin', summaryRow);
@@ -189,9 +212,9 @@ function updateTextarea() {
     datasetSchema.forEach((feature, index) => {
         let val = defaultValues[feature.name][0];
         if (val == null) {
-            scoringTextarea.value += '"${feature.name}": [null],\n';
+            scoringTextarea.value += ` "${feature.name}": [null],\n`;
         } else {
-            scoringTextarea.value += '"${feature.name}": ["${defaultValues[feature.name][0]}"],\n';
+            scoringTextarea.value += ` "${feature.name}": ["${defaultValues[feature.name][0]}"],\n`;
         }
     });
     scoringTextarea.value = scoringTextarea.value.substring(0, scoringTextarea.value.length - 2) + '\n}';
@@ -205,19 +228,19 @@ function updateForm() {
         switch (feature.computedType) {
             case 'double':
             case 'bigint':
-                content += '<div class="field"><label for="${feature.name}">${feature.name}</label><input type="number" step="any" name="${feature.name}" value="${value}"></input>';
+                content += `<div class="field"><label for="${feature.name}">${feature.name}</label><input type="number" step="any" name="${feature.name}" value="${value}"></input>`;
                 break;
 
             case 'string':
-                content += '<div class="field"><label for="${feature.name}">${feature.name}</label><input type="text" name="${feature.name}" value="${value}"></input></div>';
+                content += `<div class="field"><label for="${feature.name}">${feature.name}</label><input type="text" name="${feature.name}" value="${value}"></input></div>`;
                 break;
 
             case 'boolean':
                 let checked = value === true;
                 if (checked === true) {
-                    content += '<div class="field"><label for="${feature.name}">${feature.name}</label><input checked type="checkbox" tabindex="0" name="${feature.name}" value="${feature.name}"></input></div>';
+                    content += `<div class="field"><label for="${feature.name}">${feature.name}</label><input checked type="checkbox" tabindex="0" name="${feature.name}" value="${feature.name}"></input></div>`;
                 } else {
-                    content += '<div class="field"><label for="${feature.name}">${feature.name}</label><input type="checkbox" tabindex="0" name="${feature.name}" value="${feature.name}"></input></div>';
+                    content += `<div class="field"><label for="${feature.name}">${feature.name}</label><input type="checkbox" tabindex="0" name="${feature.name}" value="${feature.name}"></input></div>`;
                 }
 
                 break;
@@ -228,12 +251,12 @@ function updateForm() {
                 }
                 for (featureValue of feature.values) {
                     if (featureValue === value) {
-                        options += '<option value="${value}" selected>${value}</option>';
+                        options += ` <option value="${value}" selected>${value}</option> `;
                     } else {
-                        options += '<option value="${featureValue}">${featureValue}</option>';
+                        options += ` <option value="${featureValue}">${featureValue}</option> `;
                     }
                 }
-                content += '<div class="field"><label for="${feature.name}">${feature.name}</label><div class="select"><select tabindex="0" name="${feature.name}">${options}</select></div></div>';
+                content += `<div class="field"><label for="${feature.name}">${feature.name}</label><div class="select"><select tabindex="0" name="${feature.name}">${options}</select></div></div>`;
                 break;
         }
     }
@@ -306,8 +329,3 @@ if (inputModelId && inputDatasetName) {
 } else {
     document.querySelector('body').classList.add('no-inputs');
 }
-$.getJSON(getWebAppBackendUrl('/first_api_call'), function(data) {
-    console.log('Received data from backend', data)
-    const output = $('<pre />').text('Backend reply: ' + JSON.stringify(data));
-    $('body').append(output)
-});
