@@ -7,6 +7,9 @@
 
 import scrapy
 
+def test_func():
+    return "hi"
+
 
 class EpicuriousItem(scrapy.Item):
     # define the fields for your item here like:
