@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585585066772
+    "lastModifiedOn": 1585585126513
   },
   "creationTag": {
     "versionNumber": 0,
@@ -103,32 +103,12 @@
         "type": "string"
       },
       {
-        "name": "directions",
-        "type": "string"
-      },
-      {
-        "name": "description",
-        "type": "string"
-      },
-      {
         "name": "description_len",
         "type": "bigint"
       },
       {
         "name": "calories",
         "type": "double"
-      },
-      {
-        "name": "num_reviews",
-        "type": "bigint"
-      },
-      {
-        "name": "rating",
-        "type": "double"
-      },
-      {
-        "name": "rating_40+",
-        "type": "bigint"
       }
     ],
     "userModified": true
