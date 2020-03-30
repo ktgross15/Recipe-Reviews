@@ -3,6 +3,8 @@
 body {
     background: var(--grey-background);
 }
+
+/*
 .block-header {
     flex: 0 0 auto;
     padding: 8px;
@@ -13,7 +15,7 @@ body {
     overflow: auto;
 }
 
-/* .no-inputs-warning {
+ .no-inputs-warning {
     margin-top: 200px;
     display: none;
     color: var(--warning-orange);
