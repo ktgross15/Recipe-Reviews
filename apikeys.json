@@ -23,7 +23,86 @@
   },
   {
     "execSQLLike": false,
-    "localDatasets": [],
+    "localDatasets": [
+      {
+        "datasets": [
+          "allrecipes_data"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "allrecipes_prepared"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "epicurious"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "epicurious_importio"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "epicurious_prepared_s3"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "recipes_for_modeling"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "recipes_prepared"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "recipes_stacked"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "scrapy_stuff"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "test"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "test_metrics"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "test_scored"
+        ],
+        "privileges": []
+      },
+      {
+        "datasets": [
+          "train"
+        ],
+        "privileges": []
+      }
+    ],
     "projectPrivileges": {
       "admin": true,
       "readProjectContent": true,
