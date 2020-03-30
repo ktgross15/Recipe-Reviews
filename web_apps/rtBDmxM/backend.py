@@ -1,4 +1,5 @@
 import dataiku
+from dataiku.customwebapp import *
 import pandas as pd
 from flask import request
 
@@ -9,6 +10,12 @@ from flask import request
 # example to your needs.
 # From JavaScript, you can access the defined endpoints using
 # getWebAppBackendUrl('first_api_call')
+
+model_id = get_webapp_config().get("input_model")
+if model_id is None:
+    raise RuntimeError("Model not specified")
+model = dataiku.Model(model_id)
+predictor = model.get_predictor()
 
 @app.route('/first_api_call')
 def first_call():
