@@ -10,7 +10,7 @@ THRESHOLD_CARDINALITY = 100
 model_id = 's8ZCRTbJ'
 
 #make this an input visually later
-dataset_name = 'train'
+dataset_name = 'train_prepared'
 
 
 model = dataiku.Model(model_id)

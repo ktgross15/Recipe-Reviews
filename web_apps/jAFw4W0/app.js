@@ -24,7 +24,7 @@ let dateFormatOptions = {
 
 let persistResults = true;
 let inputModelId = 's8ZCRTbJ';
-let inputDatasetName = 'train';
+let inputDatasetName = 'train_prepared';
 
 // HELPERS
 
