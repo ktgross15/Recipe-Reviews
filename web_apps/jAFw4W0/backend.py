@@ -1,4 +1,4 @@
-from dataiku.customwebapp import *
+# from dataiku.customwebapp import *
 import dataiku
 import pandas as pd
 from dataiku.apinode.predict.server import handle_predict
@@ -9,9 +9,9 @@ import json
 SAMPLE_SIZE = 10000
 THRESHOLD_CARDINALITY = 100
 
-model_id = get_webapp_config().get("input_model")
-if model_id is None:
-    raise RuntimeError("Model not specified")
+model_id = 's8ZCRTbJ'
+# if model_id is None:
+#     raise RuntimeError("Model not specified")
 model = dataiku.Model(model_id)
 predictor = model.get_predictor()
 
