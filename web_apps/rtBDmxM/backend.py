@@ -27,3 +27,20 @@ def first_call():
     # Pandas dataFrames are not directly JSON serializable, use to_json()
     data = mydataset_df.to_json()
     return json.dumps({"status": "ok", "data": data})
+
+
+@app.route('/get-dataset-schema')
+def get_dataset_schema():
+    dataset = dataiku.Dataset(request.args.get('dataset_name'))
+    schema = dataset.read_schema()
+    default_values = dataset.get_dataframe(limit=1)
+    schema = get_categoricals(dataset, schema)
+    return json.dumps({ "schema": schema, "defaultValues": default_values.to_json() })
+
+
+@app.route('/score', methods=['POST'])
+def score():
+    payload = request.get_json()
+    data = { "records": payload['records'], "schema": predictor.params.schema }
+    prediction = handle_predict(predictor, data)
+    return json.dumps({ "prediction": prediction })
