@@ -3,7 +3,8 @@
     "python/epicurious_scraping": {
       "remote": "https://github.com/ktgross15/epicurious_scraping",
       "checkout": "refs/heads/master",
-      "remotePath": ""
+      "remotePath": "",
+      "lastHash": "4d99d8685e7fee9486ea0e853de7a9d76f41621b"
     }
   },
   "pythonPath": [
