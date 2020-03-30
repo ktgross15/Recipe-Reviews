@@ -23,7 +23,7 @@ body {
 .no-inputs .no-inputs-warning {
     display: block;
 }
-
+/* 
 .results-table {
     visibility: hidden;
 }
@@ -100,7 +100,7 @@ form textarea:not([rows]).scoring__textarea {
 #message {
     color: var(--error-red);
     font-weight: 500;
-}
+} 
 
 #two-class-table {
     display: none;
