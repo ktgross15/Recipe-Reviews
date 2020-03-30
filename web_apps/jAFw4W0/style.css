@@ -1,4 +1,4 @@
-/* @import '/static/public/styles/1.0.0/dku-styles.css';
+@import '/static/public/styles/1.0.0/dku-styles.css';
 
 body {
     background: var(--grey-background);
@@ -13,7 +13,7 @@ body {
     overflow: auto;
 }
 
-.no-inputs-warning {
+/* .no-inputs-warning {
     margin-top: 200px;
     display: none;
     color: var(--warning-orange);
