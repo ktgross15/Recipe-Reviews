@@ -1,10 +1,16 @@
 {
   "tags": {
-    "deleted-recipe-editor": {},
-    "recipe-editor": {},
+    "deleted-recipe-editor": {
+      "color": "#90a8b7"
+    },
+    "contains python": {
+      "color": "#0f6d82"
+    },
+    "recipe-editor": {
+      "color": "#1ac2ab"
+    },
     "imported": {
       "color": "#263238"
-    },
-    "contains python": {}
+    }
   }
 }
