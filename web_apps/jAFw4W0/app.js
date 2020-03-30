@@ -322,10 +322,12 @@ scoringButton.addEventListener('click', score);
 scoringTextarea.addEventListener('change', updateSampleFromJson);
 clearResultsLink.addEventListener('click', clearResults);
 
+updateSample();
+switchScoringMode();
 
-if (inputModelId && inputDatasetName) {
-    updateSample()
-    switchScoringMode();
-} else {
-    document.querySelector('body').classList.add('no-inputs');
-}
+// if (inputModelId && inputDatasetName) {
+//     updateSample()
+//     switchScoringMode();
+// } else {
+//     document.querySelector('body').classList.add('no-inputs');
+// }
