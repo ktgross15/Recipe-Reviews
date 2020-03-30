@@ -1,7 +1,14 @@
 {
-  "gitReferences": {},
+  "gitReferences": {
+    "python/epicurious_scraping": {
+      "remote": "https://github.com/ktgross15/epicurious_scraping",
+      "checkout": "refs/heads/master",
+      "remotePath": ""
+    }
+  },
   "pythonPath": [
-    "python"
+    "python",
+    "python/epicurious_scraping"
   ],
   "rsrcPath": [
     "R"
