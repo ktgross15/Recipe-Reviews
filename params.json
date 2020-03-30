@@ -93,8 +93,9 @@
     },
     "codeEnvs": {
       "python": {
-        "useBuiltinEnv": true,
-        "preventOverride": false
+        "useBuiltinEnv": false,
+        "preventOverride": false,
+        "envName": "webscraping"
       },
       "r": {
         "useBuiltinEnv": true,
@@ -211,11 +212,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 89,
+    "versionNumber": 90,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585519149029
+    "lastModifiedOn": 1585591829279
   },
   "creationTag": {
     "versionNumber": 0,
