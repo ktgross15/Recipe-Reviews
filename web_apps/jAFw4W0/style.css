@@ -4,7 +4,7 @@ body {
     background: var(--grey-background);
 }
 
-/*
+
 .block-header {
     flex: 0 0 auto;
     padding: 8px;
@@ -16,7 +16,7 @@ body {
 }
 
 
-/* 
+
 .results-table {
     visibility: hidden;
 }
@@ -147,4 +147,3 @@ form textarea:not([rows]).scoring__textarea {
     background: var(--grey-lighten-7);
     border-bottom: 2px solid var(--grey-lighten-6);
 }
- */
