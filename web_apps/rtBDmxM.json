@@ -2,7 +2,7 @@
   "type": "STANDARD",
   "hasLegacyBackendURL": false,
   "params": {
-    "backendEnabled": true,
+    "backendEnabled": false,
     "enableJavascriptModules": false,
     "autoStartBackend": false,
     "hideJSSecurityPanel": false,
@@ -34,13 +34,13 @@
   },
   "config": {},
   "name": "Recipe Review Prediction",
-  "apiKey": "nMvF7Gagupqy4MoJ4e088kHbc7ExZ3Qi",
+  "apiKey": "6S8kLKa1WpUTjfgtOoWpWlCNWDtrHbg3",
   "versionTag": {
-    "versionNumber": 5,
+    "versionNumber": 6,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585580987362
+    "lastModifiedOn": 1585581084160
   },
   "creationTag": {
     "versionNumber": 0,
