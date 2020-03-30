@@ -15,16 +15,7 @@ body {
     overflow: auto;
 }
 
- .no-inputs-warning {
-    margin-top: 200px;
-    display: none;
-    color: var(--warning-orange);
-    text-align: center;
-}
 
-.no-inputs .no-inputs-warning {
-    display: block;
-}
 /* 
 .results-table {
     visibility: hidden;
