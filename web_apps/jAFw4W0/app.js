@@ -189,9 +189,9 @@ function updateTextarea() {
     datasetSchema.forEach((feature, index) => {
         let val = defaultValues[feature.name][0];
         if (val == null) {
-            scoringTextarea.value += ` "${feature.name}": [null],\n`;
+            scoringTextarea.value += '"${feature.name}": [null],\n';
         } else {
-            scoringTextarea.value += ` "${feature.name}": ["${defaultValues[feature.name][0]}"],\n`;
+            scoringTextarea.value += '"${feature.name}": ["${defaultValues[feature.name][0]}"],\n';
         }
     });
     scoringTextarea.value = scoringTextarea.value.substring(0, scoringTextarea.value.length - 2) + '\n}';
