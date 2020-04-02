@@ -32,36 +32,6 @@
   "steps": [
     {
       "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "ColumnReorder",
-      "params": {
-        "referenceColumn": "ingredients",
-        "columns": [
-          "site"
-        ],
-        "reorderAction": "BEFORE_COLUMN",
-        "appliesTo": "SINGLE_COLUMN"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "ColumnReorder",
-      "params": {
-        "referenceColumn": "description",
-        "columns": [
-          "description_len"
-        ],
-        "reorderAction": "AFTER_COLUMN",
-        "appliesTo": "SINGLE_COLUMN"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
       "name": "Clean text columns",
       "metaType": "GROUP",
       "disabled": false,
@@ -227,6 +197,18 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
+  "columnWidthsByName": {
+    "site": 100,
+    "directions": 300,
+    "description_len": 128,
+    "author": 183,
+    "name": 300,
+    "rating": 100,
+    "ingredients": 300,
+    "description": 300,
+    "num_reviews": 100,
+    "calories": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
