@@ -96,7 +96,7 @@
     },
     "onBehalf": "rtBDmxM",
     "id": "xpY0SfSC9BRvLVO7",
-    "key": "6S8kLKa1WpUTjfgtOoWpWlCNWDtrHbg3",
+    "key": "bJcmhDEBEehkMCvGoTpS4AQqqugeBhqT",
     "label": "Key for Web app Recipe Review Prediction(rtBDmxM)",
     "createdOn": 1585518731319
   },
@@ -196,7 +196,7 @@
       "manageAdditionalDashboardUsers": false
     },
     "id": "jWxoXHeroULc85Wy",
-    "key": "nMvF7Gagupqy4MoJ4e088kHbc7ExZ3Qi",
+    "key": "dZpSsQQrXLr7i25yPNyZzy1ODAZuyiyL",
     "label": "webapp - new key",
     "createdOn": 1585519190374
   },
@@ -218,7 +218,7 @@
     },
     "onBehalf": "CGHGdEZ",
     "id": "UtJNhG5V40KL5dCU",
-    "key": "d1FnME0p1ZaMHlBM9qApwPM1DA8NDyVk",
+    "key": "iryBdNJXygQ0WfKKHJwPr9L3y6K7DnkJ",
     "label": "Key for Web app Recipe Ratings(CGHGdEZ)",
     "createdOn": 1585520619657
   },
@@ -321,7 +321,7 @@
     },
     "onBehalf": "jAFw4W0",
     "id": "0H49HSAe3fsl8BJG",
-    "key": "o9UDCc1D9PM2wjCKvP3DzEfgdwPr0uB7",
+    "key": "2exnrfb8QCwE8b3JIrvXzR6m1pqVbL17",
     "label": "Key for Web app Recipes - Interactive Scoring(jAFw4W0)",
     "createdOn": 1585520866649
   },
@@ -343,7 +343,7 @@
     },
     "onBehalf": "e7nCj5x",
     "id": "Wvv5x8ypoXqPAC3E",
-    "key": "6bqr9I4fot3MWJwMqSSpBR3ldxhK2E1O",
+    "key": "WW5FjOeMqn4YYjGnrXk8ogBMgHxSVHlV",
     "label": "Key for Web app Interactive Scoring - no python(e7nCj5x)",
     "createdOn": 1585582445944
   }
