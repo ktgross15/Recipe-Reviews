@@ -69,6 +69,18 @@
           {
             "from": "k",
             "to": "000"
+          },
+          {
+            "from": "calorie;",
+            "to": ""
+          },
+          {
+            "from": "\u003c1",
+            "to": "0"
+          },
+          {
+            "from": "\u003c 1",
+            "to": "0"
           }
         ],
         "normalization": "EXACT",
@@ -76,7 +88,7 @@
           "calories",
           "review_count"
         ],
-        "appliesTo": "COLUMNS",
+        "appliesTo": "ALL",
         "stopAfterFirstMatch": false,
         "matching": "SUBSTRING"
       },
@@ -117,6 +129,21 @@
       "params": {
         "columns": [
           "recipe_url",
+          "cook_time"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "recipe_url",
           "subcat_url",
           "prep_time",
           "cook_time",
@@ -150,10 +177,6 @@
           {
             "from": "num_stars",
             "to": "rating"
-          },
-          {
-            "from": "review_count",
-            "to": "num_reviews"
           }
         ]
       },
@@ -163,52 +186,109 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
-      "type": "FindReplace",
+      "type": "RoundProcessor",
       "params": {
-        "output": "",
-        "mapping": [
-          {
-            "from": "[",
-            "to": ""
+        "mode": "ROUND",
+        "places": 1,
+        "columns": [
+          "rating"
+        ],
+        "precision": 0,
+        "appliesTo": "SINGLE_COLUMN"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "name": "Clean text columns",
+      "metaType": "GROUP",
+      "disabled": false,
+      "steps": [
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "FindReplace",
+          "params": {
+            "output": "",
+            "mapping": [
+              {
+                "from": "[0-9*]",
+                "to": ""
+              }
+            ],
+            "normalization": "EXACT",
+            "columns": [
+              "ingredients",
+              "directions",
+              "description"
+            ],
+            "appliesTo": "COLUMNS",
+            "stopAfterFirstMatch": false,
+            "matching": "PATTERN"
           },
-          {
-            "from": "]",
-            "to": ""
-          }
-        ],
-        "normalization": "EXACT",
-        "columns": [
-          "ingredients",
-          "directions"
-        ],
-        "appliesTo": "COLUMNS",
-        "stopAfterFirstMatch": false,
-        "matching": "SUBSTRING"
-      },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "TextSimplifierProcessor",
+          "params": {
+            "inCol": "ingredients",
+            "sortAlphabetically": false,
+            "normalize": true,
+            "language": "english",
+            "clearStopWords": true,
+            "stem": true
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "TextSimplifierProcessor",
+          "params": {
+            "inCol": "directions",
+            "sortAlphabetically": false,
+            "normalize": true,
+            "language": "english",
+            "clearStopWords": true,
+            "stem": true
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "TextSimplifierProcessor",
+          "params": {
+            "inCol": "description",
+            "sortAlphabetically": false,
+            "normalize": true,
+            "language": "english",
+            "clearStopWords": true,
+            "stem": true
+          },
+          "alwaysShowComment": false
+        }
+      ],
       "alwaysShowComment": false
     },
     {
-      "preview": false,
+      "preview": true,
       "metaType": "PROCESSOR",
       "disabled": false,
-      "type": "CreateColumnWithGREL",
+      "type": "RoundProcessor",
       "params": {
-        "expression": "\"All Recipes\"",
-        "column": "site"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "ColumnReorder",
-      "params": {
-        "referenceColumn": "description_len",
+        "mode": "ROUND",
+        "places": 0,
         "columns": [
-          "site"
+          "calories"
         ],
-        "reorderAction": "AFTER_COLUMN",
+        "precision": 0,
         "appliesTo": "SINGLE_COLUMN"
       },
       "alwaysShowComment": false
@@ -221,6 +301,78 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
+  "columnWidthsByName": {
+    "ingredients_list": 300,
+    "prep_time": 113,
+    "rating": 141,
+    "review_count": 105,
+    "directions_list": 300,
+    "cook_time": 113,
+    "s31": 100,
+    "s30": 100,
+    "s33": 100,
+    "s32": 100,
+    "s35": 100,
+    "description_len": 128,
+    "s34": 100,
+    "s37": 100,
+    "num_stars": 141,
+    "s36": 100,
+    "s39": 100,
+    "s38": 100,
+    "total_time": 120,
+    "cholesterol_content": 183,
+    "s0": 100,
+    "s1": 100,
+    "s2": 100,
+    "s3": 100,
+    "s4": 100,
+    "s5": 100,
+    "s6": 100,
+    "protein_content": 155,
+    "s7": 100,
+    "s8": 100,
+    "author": 204,
+    "s9": 100,
+    "s40": 100,
+    "recipe_url": 120,
+    "s42": 100,
+    "s41": 100,
+    "s44": 100,
+    "s43": 100,
+    "directions": 300,
+    "s45": 100,
+    "name": 300,
+    "carb_content": 134,
+    "description": 300,
+    "subcat_url": 120,
+    "s11": 100,
+    "s10": 100,
+    "s13": 100,
+    "s12": 100,
+    "s15": 100,
+    "s14": 100,
+    "s17": 100,
+    "ingredients": 300,
+    "s16": 100,
+    "s19": 100,
+    "s18": 100,
+    "calories": 100,
+    "sodium_content": 148,
+    "fat_content": 127,
+    "s20": 100,
+    "site": 100,
+    "s22": 100,
+    "s21": 100,
+    "s24": 100,
+    "s23": 100,
+    "s26": 100,
+    "s25": 100,
+    "s28": 100,
+    "s27": 100,
+    "num_reviews": 100,
+    "s29": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {

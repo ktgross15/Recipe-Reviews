@@ -155,7 +155,7 @@
       }
     }
   },
-  "name": "Food Recipes",
+  "name": "Food Recipes (backup)",
   "imgPattern": 6,
   "metrics": {
     "probes": [],
@@ -212,11 +212,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 91,
+    "versionNumber": 92,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585831694968
+    "lastModifiedOn": 1585831695422
   },
   "creationTag": {
     "versionNumber": 0,
@@ -225,7 +225,7 @@
     },
     "lastModifiedOn": 1554832528213
   },
-  "shortDesc": "The project *Recipes* was created by Katie Gross on Apr 09th 2019",
+  "shortDesc": "The project *Recipes* was created by Katie Gross on Apr 09th 2019\nThe project *FOOD_RECIPES_BACKUP* was copied from *kgr* by Katie Gross on Apr 02nd 2020",
   "tags": [
     "imported",
     "duplicated"

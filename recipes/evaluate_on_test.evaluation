@@ -1,35 +1,38 @@
 {
-  "filterMetrics": false,
+  "backendType": "PY_MEMORY", 
+  "batchSize": 100, 
   "envSelection": {
     "envMode": "INHERIT"
-  },
-  "perGPUMemoryFraction": 0.5,
-  "backendType": "PY_MEMORY",
-  "filterInputColumns": false,
-  "useGPU": false,
-  "keptInputColumns": [],
-  "pythonBatchSize": 100000,
-  "gpuAllowGrowth": false,
-  "outputProbaPercentiles": false,
-  "outputProbabilities": true,
-  "forceOriginalEngine": false,
-  "metrics": [],
-  "forcedClassifierThreshold": 0,
-  "batchSize": 100,
-  "overrideModelSpecifiedThreshold": false,
-  "sparkParams": {
-    "pipelineAllowMerge": true,
-    "sparkPreparedDFStorageLevel": "MEMORY_AND_DISK",
-    "pipelineAllowStart": true,
-    "sparkExecutionEngine": "SPARK_SUBMIT",
-    "sparkConf": {
-      "inheritConf": "default",
-      "conf": []
-    },
-    "sparkRepartitionNonHDFS": 1,
-    "sparkUseGlobalMetastore": false
-  },
+  }, 
+  "filterInputColumns": false, 
+  "filterMetrics": false, 
+  "forceOriginalEngine": false, 
+  "forcedClassifierThreshold": 0, 
+  "gpuAllowGrowth": false, 
   "gpuList": [
     0
-  ]
+  ], 
+  "keptInputColumns": [], 
+  "metrics": [], 
+  "outputProbaPercentiles": false, 
+  "outputProbabilities": true, 
+  "outputs": [
+    "prediction_correct"
+  ], 
+  "overrideModelSpecifiedThreshold": false, 
+  "perGPUMemoryFraction": 0.5, 
+  "pythonBatchSize": 100000, 
+  "sparkParams": {
+    "pipelineAllowMerge": true, 
+    "pipelineAllowStart": true, 
+    "sparkConf": {
+      "conf": [], 
+      "inheritConf": "default"
+    }, 
+    "sparkExecutionEngine": "SPARK_SUBMIT", 
+    "sparkPreparedDFStorageLevel": "MEMORY_AND_DISK", 
+    "sparkRepartitionNonHDFS": 1, 
+    "sparkUseGlobalMetastore": false
+  }, 
+  "useGPU": false
 }
