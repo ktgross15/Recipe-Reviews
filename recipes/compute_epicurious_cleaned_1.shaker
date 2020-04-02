@@ -464,7 +464,7 @@
       "alwaysShowComment": false
     },
     {
-      "preview": true,
+      "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
       "type": "PythonUDF",
@@ -481,6 +481,22 @@
         "usePythonUnicode": true,
         "vectorSize": 256,
         "vectorize": false
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "RoundProcessor",
+      "params": {
+        "mode": "ROUND",
+        "places": 2,
+        "columns": [
+          "rating"
+        ],
+        "precision": 0,
+        "appliesTo": "SINGLE_COLUMN"
       },
       "alwaysShowComment": false
     }
