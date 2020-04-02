@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 3,
+    "versionNumber": 4,
     "lastModifiedBy": {
-      "login": "Jesse"
+      "login": "ktgross15"
     },
-    "lastModifiedOn": 1556635858631
+    "lastModifiedOn": 1585832722595
   },
   "creationTag": {
     "versionNumber": 0,
@@ -111,15 +111,11 @@
         "type": "bigint"
       },
       {
-        "name": "site",
-        "type": "string"
-      },
-      {
         "name": "calories",
         "type": "string"
       },
       {
-        "name": "num_reviews",
+        "name": "review_count",
         "type": "bigint"
       },
       {
