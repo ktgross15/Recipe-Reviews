@@ -470,10 +470,17 @@
       "type": "PythonUDF",
       "params": {
         "mode": "CELL",
+        "envSelection": {
+          "envMode": "INHERIT"
+        },
         "stopOnError": true,
         "pythonSourceCode": "# Modify the process function to fit your needs\ndef process(row):\n    # In \u0027cell\u0027 mode, the process function must return\n    # a single cell value for each row,\n    # which will be affected to a new column.\n    # The \u0027row\u0027 argument is a dictionary of columns of the row\n    return len(row)\n",
+        "useKernel": false,
         "column": "description_len",
-        "usePythonUnicode": true
+        "sourceColumnsList": [],
+        "usePythonUnicode": true,
+        "vectorSize": 256,
+        "vectorize": false
       },
       "alwaysShowComment": false
     }
@@ -485,6 +492,21 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
+  "columnWidthsByName": {
+    "author": 183,
+    "rating_of_4": 100,
+    "rating": 100,
+    "description": 300,
+    "calories": 100,
+    "tags": 300,
+    "num_authors": 100,
+    "site": 100,
+    "directions": 300,
+    "description_len": 128,
+    "name": 300,
+    "ingredients": 300,
+    "num_reviews": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
