@@ -15,7 +15,7 @@
           "deps": []
         },
         {
-          "ref": "epicurious_prepared_s3",
+          "ref": "epicurious_prepared",
           "deps": []
         }
       ]
@@ -32,11 +32,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 11,
+    "versionNumber": 12,
     "lastModifiedBy": {
-      "login": "kgross"
+      "login": "ktgross15"
     },
-    "lastModifiedOn": 1556366421002
+    "lastModifiedOn": 1585832540780
   },
   "creationTag": {
     "versionNumber": 0,

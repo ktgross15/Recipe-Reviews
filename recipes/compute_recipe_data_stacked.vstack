@@ -48,7 +48,7 @@
     },
     {
       "preFilter": {},
-      "originLabel": "epicurious_prepared_s3",
+      "originLabel": "epicurious_prepared",
       "index": 1
     }
   ],
