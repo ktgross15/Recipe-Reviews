@@ -128,22 +128,6 @@
       "type": "ColumnsSelector",
       "params": {
         "columns": [
-          "recipe_url",
-          "cook_time"
-        ],
-        "keep": false,
-        "appliesTo": "COLUMNS"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": true,
-      "type": "ColumnsSelector",
-      "params": {
-        "columns": [
-          "recipe_url",
           "subcat_url",
           "prep_time",
           "cook_time",
@@ -152,7 +136,8 @@
           "protein_content",
           "cholesterol_content",
           "sodium_content",
-          "total_time"
+          "total_time",
+          "recipe_url"
         ],
         "keep": false,
         "appliesTo": "COLUMNS"
@@ -179,22 +164,6 @@
             "to": "rating"
           }
         ]
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "RoundProcessor",
-      "params": {
-        "mode": "ROUND",
-        "places": 1,
-        "columns": [
-          "rating"
-        ],
-        "precision": 0,
-        "appliesTo": "SINGLE_COLUMN"
       },
       "alwaysShowComment": false
     },
@@ -275,22 +244,6 @@
           "alwaysShowComment": false
         }
       ],
-      "alwaysShowComment": false
-    },
-    {
-      "preview": true,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "RoundProcessor",
-      "params": {
-        "mode": "ROUND",
-        "places": 0,
-        "columns": [
-          "calories"
-        ],
-        "precision": 0,
-        "appliesTo": "SINGLE_COLUMN"
-      },
       "alwaysShowComment": false
     }
   ],
