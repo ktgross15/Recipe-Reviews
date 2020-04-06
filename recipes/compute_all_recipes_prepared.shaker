@@ -57,26 +57,6 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
-      "type": "FilterOnValue",
-      "params": {
-        "normalizationMode": "EXACT",
-        "booleanMode": "AND",
-        "columns": [
-          "ingredients"
-        ],
-        "values": [
-          "[]"
-        ],
-        "matchingMode": "FULL_STRING",
-        "action": "REMOVE_ROW",
-        "appliesTo": "SINGLE_COLUMN"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
       "type": "FindReplace",
       "params": {
         "output": "",
