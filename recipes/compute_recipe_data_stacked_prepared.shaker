@@ -188,8 +188,8 @@
       "disabled": false,
       "type": "CreateColumnWithGREL",
       "params": {
-        "expression": "if(rating\u003e4.0, \"good\", \"bad\")",
-        "column": "rating_ctg"
+        "expression": "if(rating\u003e4.0, 1, 0)",
+        "column": "rating_over_4"
       },
       "alwaysShowComment": false
     }
@@ -215,6 +215,7 @@
     "description_len": 128,
     "name": 300,
     "ingredients": 300,
+    "rating_over_4": 113,
     "num_reviews": 100
   },
   "sorting": [],
