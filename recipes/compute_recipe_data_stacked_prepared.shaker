@@ -189,7 +189,7 @@
       "type": "CreateColumnWithGREL",
       "params": {
         "expression": "if(rating\u003e4.0, \"good\", \"bad\")",
-        "column": "good_or_bad"
+        "column": "rating_ctg"
       },
       "alwaysShowComment": false
     }
@@ -209,6 +209,7 @@
     "review_count": 134,
     "calories": 100,
     "site": 100,
+    "rating_ctg": 100,
     "rating_category": 128,
     "directions": 300,
     "description_len": 128,
