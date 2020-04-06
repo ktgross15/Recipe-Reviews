@@ -171,6 +171,10 @@
           {
             "from": "recipe_steps",
             "to": "directions"
+          },
+          {
+            "from": "num_reviews",
+            "to": "review_count"
           }
         ]
       },
@@ -214,6 +218,7 @@
     "rating_of_4": 100,
     "rating": 100,
     "description": 300,
+    "review_count": 105,
     "calories": 100,
     "saturated_fat": 113,
     "tags": 300,
