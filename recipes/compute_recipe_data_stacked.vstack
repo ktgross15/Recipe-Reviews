@@ -7,10 +7,9 @@
     "directions",
     "description",
     "description_len",
-    "site",
     "calories",
-    "num_reviews",
-    "rating"
+    "rating",
+    "site"
   ],
   "originColumnName": "original_dataset",
   "engineParams": {
@@ -82,20 +81,16 @@
             "type": "bigint"
           },
           {
-            "name": "site",
-            "type": "string"
-          },
-          {
             "name": "calories",
             "type": "string"
           },
           {
-            "name": "num_reviews",
-            "type": "bigint"
-          },
-          {
             "name": "rating",
             "type": "double"
+          },
+          {
+            "name": "site",
+            "type": "string"
           }
         ],
         "userModified": false
