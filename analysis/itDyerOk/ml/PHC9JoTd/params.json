@@ -218,7 +218,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
@@ -230,7 +230,7 @@
         "sendToInput": "main"
       },
       "ingredients": {
-        "text_handling": "TOKENIZE_HASHING_SVD",
+        "text_handling": "TOKENIZE_TFIDF",
         "minRowsRatio": 0.001,
         "maxRowsRatio": 0.8,
         "maxWords": 0,
@@ -242,10 +242,10 @@
         "stopWordsMode": "NONE",
         "useCustomVectorizer": false,
         "name": "ingredients",
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "TEXT",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "FreeText"
         },
@@ -289,7 +289,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
