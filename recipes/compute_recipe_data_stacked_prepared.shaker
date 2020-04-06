@@ -81,31 +81,6 @@
           "preview": false,
           "metaType": "PROCESSOR",
           "disabled": false,
-          "type": "FindReplace",
-          "params": {
-            "output": "",
-            "mapping": [
-              {
-                "from": "[0-9*]",
-                "to": ""
-              }
-            ],
-            "normalization": "EXACT",
-            "columns": [
-              "ingredients",
-              "directions",
-              "description"
-            ],
-            "appliesTo": "COLUMNS",
-            "stopAfterFirstMatch": false,
-            "matching": "PATTERN"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
           "type": "TextSimplifierProcessor",
           "params": {
             "inCol": "ingredients",
@@ -194,13 +169,45 @@
     {
       "preview": false,
       "metaType": "PROCESSOR",
-      "disabled": true,
+      "disabled": false,
       "type": "FilterOnNumericalRange",
       "params": {
         "min": 3.0,
         "booleanMode": "AND",
         "columns": [
           "review_count"
+        ],
+        "action": "KEEP_ROW",
+        "appliesTo": "SINGLE_COLUMN"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "RoundProcessor",
+      "params": {
+        "mode": "ROUND",
+        "places": 2,
+        "columns": [
+          "rating"
+        ],
+        "precision": 0,
+        "appliesTo": "SINGLE_COLUMN"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FilterOnNumericalRange",
+      "params": {
+        "min": 3.0,
+        "booleanMode": "AND",
+        "columns": [
+          "rating"
         ],
         "action": "KEEP_ROW",
         "appliesTo": "SINGLE_COLUMN"
