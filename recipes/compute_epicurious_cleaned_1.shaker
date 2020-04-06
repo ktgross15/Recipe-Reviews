@@ -95,239 +95,6 @@
     },
     {
       "preview": false,
-      "name": "clean nutritional info",
-      "metaType": "GROUP",
-      "disabled": false,
-      "steps": [
-        {
-          "preview": false,
-          "designTimeReport": {
-            "report": {
-              "createdColumnCount": 2
-            }
-          },
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnSplitter",
-          "params": {
-            "inCol": "carbs",
-            "keepEmptyChunks": false,
-            "limit": 0,
-            "separator": " g(",
-            "outColPrefix": "carbs_",
-            "limitOutput": false,
-            "target": "COLUMNS"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "designTimeReport": {
-            "report": {
-              "createdColumnCount": 2
-            }
-          },
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnSplitter",
-          "params": {
-            "inCol": "fat",
-            "keepEmptyChunks": false,
-            "limit": 0,
-            "separator": " g(",
-            "outColPrefix": "fat_",
-            "limitOutput": false,
-            "target": "COLUMNS"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "designTimeReport": {
-            "report": {
-              "createdColumnCount": 2
-            }
-          },
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnSplitter",
-          "params": {
-            "inCol": "protein",
-            "keepEmptyChunks": false,
-            "limit": 0,
-            "separator": " g(",
-            "outColPrefix": "protein_",
-            "limitOutput": false,
-            "target": "COLUMNS"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "designTimeReport": {
-            "report": {
-              "createdColumnCount": 2
-            }
-          },
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnSplitter",
-          "params": {
-            "inCol": "saturated_fat",
-            "keepEmptyChunks": false,
-            "limit": 0,
-            "separator": " g(",
-            "outColPrefix": "saturated_fat_",
-            "limitOutput": false,
-            "target": "COLUMNS"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "designTimeReport": {
-            "report": {
-              "createdColumnCount": 2
-            }
-          },
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnSplitter",
-          "params": {
-            "inCol": "sodium",
-            "keepEmptyChunks": false,
-            "limit": 0,
-            "separator": " mg(",
-            "outColPrefix": "sodium_",
-            "limitOutput": false,
-            "target": "COLUMNS"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "designTimeReport": {
-            "report": {
-              "createdColumnCount": 2
-            }
-          },
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnSplitter",
-          "params": {
-            "inCol": "fiber",
-            "keepEmptyChunks": false,
-            "limit": 0,
-            "separator": " g(",
-            "outColPrefix": "fiber_",
-            "limitOutput": false,
-            "target": "COLUMNS"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "designTimeReport": {
-            "report": {
-              "createdColumnCount": 2
-            }
-          },
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnSplitter",
-          "params": {
-            "inCol": "cholesterol",
-            "keepEmptyChunks": false,
-            "limit": 0,
-            "separator": " mg(",
-            "outColPrefix": "cholesterol_",
-            "limitOutput": false,
-            "target": "COLUMNS"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnsSelector",
-          "params": {
-            "columns": [
-              "carbs",
-              "carbs_1",
-              "protein",
-              "protein_1",
-              "fat",
-              "fat_1",
-              "saturated_fat",
-              "saturated_fat_1",
-              "sodium",
-              "sodium_1",
-              "fiber",
-              "fiber_1",
-              "cholesterol",
-              "cholesterol_1"
-            ],
-            "keep": false,
-            "appliesTo": "COLUMNS"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnRenamer",
-          "params": {
-            "renamings": [
-              {
-                "from": "carbs_0",
-                "to": "carbs (g)"
-              },
-              {
-                "from": "fat_0",
-                "to": "fat (g)"
-              },
-              {
-                "from": "protein_0",
-                "to": "protein (g)"
-              },
-              {
-                "from": "saturated_fat_0",
-                "to": "saturated fat (g)"
-              },
-              {
-                "from": "sodium_0",
-                "to": "sodium (mg)"
-              },
-              {
-                "from": "fiber_0",
-                "to": "fiber (g)"
-              },
-              {
-                "from": "cholesterol_0",
-                "to": "cholesterol (mg)"
-              }
-            ]
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "CreateColumnWithGREL",
-          "params": {
-            "expression": "round(calories)",
-            "column": "calories"
-          },
-          "alwaysShowComment": false
-        }
-      ],
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
       "name": "Clean ratings",
       "metaType": "GROUP",
       "disabled": false,
@@ -372,30 +139,13 @@
           "preview": false,
           "metaType": "PROCESSOR",
           "disabled": false,
-          "type": "ColumnRenamer",
+          "comment": "converts rating to be out of 5 (rather than out of 4)",
+          "type": "CreateColumnWithGREL",
           "params": {
-            "renamings": [
-              {
-                "from": "rating_0",
-                "to": "rating"
-              }
-            ]
+            "expression": "rating_0/4*5",
+            "column": "rating"
           },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnReorder",
-          "params": {
-            "columns": [
-              "rating"
-            ],
-            "reorderAction": "AT_END",
-            "appliesTo": "COLUMNS"
-          },
-          "alwaysShowComment": false
+          "alwaysShowComment": true
         }
       ],
       "alwaysShowComment": false
@@ -419,10 +169,6 @@
       "params": {
         "renamings": [
           {
-            "from": "rating",
-            "to": "rating_of_4"
-          },
-          {
             "from": "recipe_steps",
             "to": "directions"
           }
@@ -434,69 +180,22 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
-      "type": "CreateColumnWithGREL",
-      "params": {
-        "expression": "rating_of_4/4*5",
-        "column": "rating"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
       "type": "ColumnsSelector",
       "params": {
         "columns": [
+          "rating_0",
+          "carbs",
+          "fat",
+          "protein",
+          "saturated_fat",
+          "sodium",
+          "fiber",
+          "cholesterol",
           "make_again_pct",
-          "num_servings",
-          "carbs (g)",
-          "fat (g)",
-          "protein (g)",
-          "saturated fat (g)",
-          "sodium (mg)",
-          "fiber (g)",
-          "cholesterol (mg)"
+          "num_servings"
         ],
         "keep": false,
         "appliesTo": "COLUMNS"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "PythonUDF",
-      "params": {
-        "mode": "CELL",
-        "envSelection": {
-          "envMode": "INHERIT"
-        },
-        "stopOnError": true,
-        "pythonSourceCode": "# Modify the process function to fit your needs\ndef process(row):\n    # In \u0027cell\u0027 mode, the process function must return\n    # a single cell value for each row,\n    # which will be affected to a new column.\n    # The \u0027row\u0027 argument is a dictionary of columns of the row\n    return len(row)\n",
-        "useKernel": false,
-        "column": "description_len",
-        "sourceColumnsList": [],
-        "usePythonUnicode": true,
-        "vectorSize": 256,
-        "vectorize": false
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": true,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "RoundProcessor",
-      "params": {
-        "mode": "ROUND",
-        "places": 2,
-        "columns": [
-          "rating"
-        ],
-        "precision": 0,
-        "appliesTo": "SINGLE_COLUMN"
       },
       "alwaysShowComment": false
     }
@@ -509,18 +208,25 @@
   },
   "analysisColumnData": {},
   "columnWidthsByName": {
+    "fiber": 100,
+    "carbs": 100,
     "author": 183,
     "rating_of_4": 100,
     "rating": 100,
     "description": 300,
     "calories": 100,
+    "saturated_fat": 113,
     "tags": 300,
     "num_authors": 100,
+    "sodium": 113,
     "site": 100,
     "directions": 300,
     "description_len": 128,
+    "protein": 100,
     "name": 300,
+    "fat": 106,
     "ingredients": 300,
+    "cholesterol": 100,
     "num_reviews": 100
   },
   "sorting": [],
