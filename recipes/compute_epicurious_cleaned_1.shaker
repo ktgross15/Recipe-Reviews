@@ -32,69 +32,6 @@
   "steps": [
     {
       "preview": false,
-      "name": "Clean authors",
-      "metaType": "GROUP",
-      "disabled": false,
-      "steps": [
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "CreateColumnWithGREL",
-          "params": {
-            "expression": "arrayLen(authors)",
-            "column": "num_authors"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "FillEmptyWithValue",
-          "params": {
-            "columns": [
-              "num_authors"
-            ],
-            "appliesTo": "SINGLE_COLUMN",
-            "value": "0"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ArrayExtractProcessor",
-          "params": {
-            "output": "author",
-            "mode": "INDEX",
-            "input": "authors",
-            "index": 0,
-            "end": 0,
-            "begin": 0
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "ColumnsSelector",
-          "params": {
-            "columns": [
-              "authors"
-            ],
-            "keep": false,
-            "appliesTo": "SINGLE_COLUMN"
-          },
-          "alwaysShowComment": false
-        }
-      ],
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
       "name": "Clean ratings",
       "metaType": "GROUP",
       "disabled": false,
@@ -154,6 +91,21 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
+      "type": "ArrayExtractProcessor",
+      "params": {
+        "output": "author",
+        "mode": "INDEX",
+        "input": "authors",
+        "index": 0,
+        "end": 0,
+        "begin": 0
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
       "type": "CreateColumnWithGREL",
       "params": {
         "expression": "\"Epicurious\"",
@@ -187,6 +139,7 @@
       "type": "ColumnsSelector",
       "params": {
         "columns": [
+          "authors",
           "rating_0",
           "carbs",
           "fat",
@@ -232,7 +185,8 @@
     "fat": 106,
     "ingredients": 300,
     "cholesterol": 100,
-    "num_reviews": 100
+    "num_reviews": 100,
+    "authors": 100
   },
   "sorting": [],
   "globalSearchQuery": "",
