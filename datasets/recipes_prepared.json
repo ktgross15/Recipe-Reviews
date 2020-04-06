@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 8,
+    "versionNumber": 9,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586198378008
+    "lastModifiedOn": 1586209162571
   },
   "creationTag": {
     "versionNumber": 0,
@@ -121,6 +121,10 @@
       {
         "name": "rating",
         "type": "double"
+      },
+      {
+        "name": "good_or_bad",
+        "type": "string"
       },
       {
         "name": "site",
