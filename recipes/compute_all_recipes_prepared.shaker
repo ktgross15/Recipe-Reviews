@@ -34,12 +34,35 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
+      "type": "ColumnRenamer",
+      "params": {
+        "renamings": [
+          {
+            "from": "ingredients_list",
+            "to": "ingredients"
+          },
+          {
+            "from": "directions_list",
+            "to": "directions"
+          },
+          {
+            "from": "num_stars",
+            "to": "rating"
+          }
+        ]
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
       "type": "FilterOnValue",
       "params": {
         "normalizationMode": "EXACT",
         "booleanMode": "AND",
         "columns": [
-          "ingredients_list"
+          "ingredients"
         ],
         "values": [
           "[]"
@@ -98,33 +121,6 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
-      "type": "CreateColumnWithGREL",
-      "params": {
-        "expression": "length(description)",
-        "column": "description_len"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "FilterOnNumericalRange",
-      "params": {
-        "min": 3.0,
-        "booleanMode": "AND",
-        "columns": [
-          "review_count"
-        ],
-        "action": "KEEP_ROW",
-        "appliesTo": "SINGLE_COLUMN"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
       "type": "ColumnsSelector",
       "params": {
         "columns": [
@@ -141,29 +137,6 @@
         ],
         "keep": false,
         "appliesTo": "COLUMNS"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "ColumnRenamer",
-      "params": {
-        "renamings": [
-          {
-            "from": "ingredients_list",
-            "to": "ingredients"
-          },
-          {
-            "from": "directions_list",
-            "to": "directions"
-          },
-          {
-            "from": "num_stars",
-            "to": "rating"
-          }
-        ]
       },
       "alwaysShowComment": false
     },
@@ -247,7 +220,7 @@
       "alwaysShowComment": false
     },
     {
-      "preview": true,
+      "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
       "type": "CreateColumnWithGREL",
