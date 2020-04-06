@@ -57,6 +57,29 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "subcat_url",
+          "prep_time",
+          "cook_time",
+          "fat_content",
+          "carb_content",
+          "protein_content",
+          "cholesterol_content",
+          "sodium_content",
+          "total_time",
+          "recipe_url"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
       "type": "FindReplace",
       "params": {
         "output": "",
@@ -91,32 +114,9 @@
           "calories",
           "review_count"
         ],
-        "appliesTo": "ALL",
+        "appliesTo": "COLUMNS",
         "stopAfterFirstMatch": false,
         "matching": "SUBSTRING"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "ColumnsSelector",
-      "params": {
-        "columns": [
-          "subcat_url",
-          "prep_time",
-          "cook_time",
-          "fat_content",
-          "carb_content",
-          "protein_content",
-          "cholesterol_content",
-          "sodium_content",
-          "total_time",
-          "recipe_url"
-        ],
-        "keep": false,
-        "appliesTo": "COLUMNS"
       },
       "alwaysShowComment": false
     },
