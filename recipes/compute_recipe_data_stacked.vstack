@@ -6,8 +6,8 @@
     "ingredients",
     "directions",
     "description",
-    "description_len",
     "calories",
+    "review_count",
     "rating",
     "site"
   ],
@@ -77,12 +77,12 @@
             "type": "string"
           },
           {
-            "name": "description_len",
-            "type": "bigint"
-          },
-          {
             "name": "calories",
             "type": "string"
+          },
+          {
+            "name": "review_count",
+            "type": "bigint"
           },
           {
             "name": "rating",
