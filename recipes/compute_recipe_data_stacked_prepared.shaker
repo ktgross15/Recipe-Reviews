@@ -188,6 +188,33 @@
         }
       ],
       "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "length(description)",
+        "column": "description_len"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "FilterOnNumericalRange",
+      "params": {
+        "min": 3.0,
+        "booleanMode": "AND",
+        "columns": [
+          "review_count"
+        ],
+        "action": "KEEP_ROW",
+        "appliesTo": "SINGLE_COLUMN"
+      },
+      "alwaysShowComment": false
     }
   ],
   "maxProcessedMemTableBytes": -1,
@@ -206,6 +233,7 @@
     "rating": 100,
     "ingredients": 300,
     "description": 300,
+    "review_count": 134,
     "num_reviews": 100,
     "calories": 100
   },
