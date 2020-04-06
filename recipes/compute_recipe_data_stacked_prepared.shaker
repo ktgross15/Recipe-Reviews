@@ -186,31 +186,10 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
-      "type": "RoundProcessor",
+      "type": "CreateColumnWithGREL",
       "params": {
-        "mode": "ROUND",
-        "places": 1,
-        "columns": [
-          "rating"
-        ],
-        "precision": 0,
-        "appliesTo": "SINGLE_COLUMN"
-      },
-      "alwaysShowComment": false
-    },
-    {
-      "preview": false,
-      "metaType": "PROCESSOR",
-      "disabled": false,
-      "type": "FilterOnNumericalRange",
-      "params": {
-        "min": 3.0,
-        "booleanMode": "AND",
-        "columns": [
-          "rating"
-        ],
-        "action": "KEEP_ROW",
-        "appliesTo": "SINGLE_COLUMN"
+        "expression": "if(rating\u003e4.0, \"good\", \"bad\")",
+        "column": "good_or_bad"
       },
       "alwaysShowComment": false
     }
@@ -223,17 +202,19 @@
   },
   "analysisColumnData": {},
   "columnWidthsByName": {
-    "site": 100,
-    "directions": 300,
-    "description_len": 128,
+    "good_or_bad": 100,
     "author": 183,
-    "name": 300,
     "rating": 100,
-    "ingredients": 300,
     "description": 300,
     "review_count": 134,
-    "num_reviews": 100,
-    "calories": 100
+    "calories": 100,
+    "site": 100,
+    "rating_category": 128,
+    "directions": 300,
+    "description_len": 128,
+    "name": 300,
+    "ingredients": 300,
+    "num_reviews": 100
   },
   "sorting": [],
   "globalSearchQuery": "",
