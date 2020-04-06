@@ -189,7 +189,7 @@
       "type": "RoundProcessor",
       "params": {
         "mode": "ROUND",
-        "places": 2,
+        "places": 1,
         "columns": [
           "rating"
         ],
