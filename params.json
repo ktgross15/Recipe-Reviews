@@ -155,7 +155,7 @@
       }
     }
   },
-  "name": "Food Recipes (backup)",
+  "name": "Recipe Review Prediction",
   "imgPattern": 6,
   "metrics": {
     "probes": [],
@@ -212,11 +212,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 92,
+    "versionNumber": 93,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1585831695422
+    "lastModifiedOn": 1586193460682
   },
   "creationTag": {
     "versionNumber": 0,
