@@ -166,52 +166,18 @@
     },
     {
       "preview": false,
-      "name": "Clean calories",
-      "metaType": "GROUP",
+      "metaType": "PROCESSOR",
       "disabled": false,
-      "steps": [
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "RoundProcessor",
-          "params": {
-            "mode": "ROUND",
-            "places": 0,
-            "columns": [
-              "calories"
-            ],
-            "precision": 0,
-            "appliesTo": "SINGLE_COLUMN"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "CreateColumnWithGREL",
-          "params": {
-            "expression": "if(calories\u003e1000,1000,calories)",
-            "column": "calories"
-          },
-          "alwaysShowComment": false
-        },
-        {
-          "preview": false,
-          "metaType": "PROCESSOR",
-          "disabled": false,
-          "type": "FillEmptyWithValue",
-          "params": {
-            "columns": [
-              "calories"
-            ],
-            "appliesTo": "SINGLE_COLUMN",
-            "value": "325"
-          },
-          "alwaysShowComment": false
-        }
-      ],
+      "type": "RoundProcessor",
+      "params": {
+        "mode": "ROUND",
+        "places": 0,
+        "columns": [
+          "calories"
+        ],
+        "precision": 0,
+        "appliesTo": "SINGLE_COLUMN"
+      },
       "alwaysShowComment": false
     },
     {
