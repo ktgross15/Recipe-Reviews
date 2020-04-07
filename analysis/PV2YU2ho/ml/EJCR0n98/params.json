@@ -233,7 +233,7 @@
         "hashSVDSVDLimit": 50000,
         "hashSVDSVDComponents": 100,
         "stopWordsMode": "CUSTOM",
-        "customStopWords": "cup tablespoon teaspoon ounc pound",
+        "customStopWords": "cup tablespoon teaspoon ounc pound chop cut slice minc fine",
         "useCustomVectorizer": false,
         "name": "ingredients",
         "role": "INPUT",
