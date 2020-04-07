@@ -29,7 +29,7 @@
         "rules": []
       },
       "samplingMethod": "CLASS_REBALANCE_TARGET_NB_APPROX",
-      "maxRecords": 100000,
+      "maxRecords": 40000,
       "targetRatio": 0.02,
       "column": "rating_over_4",
       "withinFirstN": -1,
