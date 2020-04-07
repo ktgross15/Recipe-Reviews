@@ -2,12 +2,13 @@
   "type": "STANDARD",
   "hasLegacyBackendURL": false,
   "params": {
-    "backendEnabled": true,
+    "backendEnabled": false,
     "enableJavascriptModules": false,
     "autoStartBackend": false,
     "hideJSSecurityPanel": false,
     "envSelection": {
-      "envMode": "INHERIT"
+      "envMode": "USE_BUILTIN_MODE",
+      "envName": "36_deep_learning"
     },
     "nbProcesses": 1,
     "libraries": [
@@ -37,11 +38,11 @@
   "name": "Recipes - Interactive Scoring",
   "apiKey": "dZpSsQQrXLr7i25yPNyZzy1ODAZuyiyL",
   "versionTag": {
-    "versionNumber": 64,
+    "versionNumber": 65,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586273550131
+    "lastModifiedOn": 1586273584143
   },
   "creationTag": {
     "versionNumber": 0,
