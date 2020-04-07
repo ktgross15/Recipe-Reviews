@@ -8,6 +8,15 @@
           "objectType": "DATASET"
         },
         "modes": []
+      },
+      {
+        "objectRef": {
+          "objectId": "jAFw4W0",
+          "objectType": "WEB_APP"
+        },
+        "modes": [
+          "READ"
+        ]
       }
     ]
   },
@@ -212,11 +221,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 94,
+    "versionNumber": 95,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586273394376
+    "lastModifiedOn": 1586279241791
   },
   "creationTag": {
     "versionNumber": 0,
