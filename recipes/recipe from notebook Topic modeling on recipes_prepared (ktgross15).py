@@ -121,11 +121,10 @@ topics_model = LatentDirichletAllocation(n_topics, random_state=0)
 topics_model.fit(text_tfidf)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Can tune #topics
+# Can tune number oftopics
 
 topics_model.score(text_tfidf)
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # topics_model.get_params()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
@@ -152,7 +151,10 @@ df_document_topic['dominant_topic'] = dominant_topic
 df_document_topic.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df_new = p
+df['topic'] = list(df_document_topic['dominant_topic'])
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+df.tail()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ### Most Frequent Words per Topics
@@ -323,4 +325,4 @@ raw_text
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 recipes_topic_modeling = dataiku.Dataset("recipes_topic_modeling")
-recipes_topic_modeling.write_with_schema(pandas_dataframe)
+recipes_topic_modeling.write_with_schema(df)
