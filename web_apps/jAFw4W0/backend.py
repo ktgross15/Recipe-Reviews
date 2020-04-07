@@ -35,7 +35,7 @@ def get_categoricals(dataset, schema):
 @app.route('/get-dataset-schema')
 def get_dataset_schema():
     # dataset = dataiku.Dataset(request.args.get('dataset_name'))
-    dataset = dataiku.Dataset('train')
+    dataset = dataiku.Dataset(dataset_name)
     schema = dataset.read_schema()
     default_values = dataset.get_dataframe(limit=1)
     schema = get_categoricals(dataset, schema)
