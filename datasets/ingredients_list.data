@@ -1,16 +1,31 @@
 {
   "data": [
     [
-      "butter"
+      "grape tomatoes"
     ],
     [
-      null
+      "plum tomatoes"
+    ],
+    [
+      "thin slice red onion"
+    ],
+    [
+      "olive oil"
+    ],
+    [
+      "red wine vinegar"
+    ],
+    [
+      "salt"
+    ],
+    [
+      "pepper"
     ]
   ],
   "schema": {
     "columns": [
       {"name":"ingredients","type":"string"}
     ],
-    "userModified": false
+    "userModified": true
   }
 }
