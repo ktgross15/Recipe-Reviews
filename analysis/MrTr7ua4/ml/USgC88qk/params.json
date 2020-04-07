@@ -245,7 +245,7 @@
           "recordedMeaning": "FreeText"
         },
         "autoReason": "REJECT_DEFAULT_TEXT_HANDLING",
-        "customHandlingCode": "",
+        "customHandlingCode": "from sklearn.feature_extraction import text\n\n# Applies count vectorization to the feature\nprocessor \u003d text.CountVectorizer()\n",
         "customProcessorWantsMatrix": false,
         "sendToInput": "main"
       },
