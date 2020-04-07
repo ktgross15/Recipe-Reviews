@@ -45,8 +45,9 @@
   "otherColumns": [],
   "pivots": [
     {
+      "valueLimit": "TOP_N",
       "minOccLimit": 0,
-      "topnLimit": 0,
+      "topnLimit": 20,
       "globalCount": true,
       "explicitValues": [],
       "keyColumns": [
@@ -56,5 +57,6 @@
     }
   ],
   "computedColumns": [],
-  "customAggregates": []
+  "customAggregates": [],
+  "enginesPreferences": {}
 }
