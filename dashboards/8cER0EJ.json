@@ -9,8 +9,8 @@
             "box": {
               "top": 0,
               "left": 0,
-              "width": 3,
-              "height": 3
+              "width": 11,
+              "height": 6
             },
             "clickAction": "DO_NOTHING",
             "tileParams": {
@@ -33,11 +33,11 @@
   "name": "Recipes\u0027s default dashboard",
   "showGrid": true,
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586279252718
+    "lastModifiedOn": 1586279261109
   },
   "creationTag": {
     "versionNumber": 0,
