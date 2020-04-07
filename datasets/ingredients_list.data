@@ -24,7 +24,7 @@
   ],
   "schema": {
     "columns": [
-      {"name":"ingredients","type":"string"}
+      {"name":"tomato_salad","type":"string"}
     ],
     "userModified": true
   }
