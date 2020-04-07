@@ -9,7 +9,7 @@ SAMPLE_SIZE = 10000
 THRESHOLD_CARDINALITY = 100
 model_id = '3MdtfR6C'
 #make this an input visually later
-dataset_name = 'recipes_topic_modeling'
+dataset_name = 'webapp_input'
 
 
 model = dataiku.Model(model_id)

@@ -24,7 +24,7 @@ let dateFormatOptions = {
 
 let persistResults = false;
 let inputModelId = '3MdtfR6C';
-let inputDatasetName = 'recipes_topic_modeling';
+let inputDatasetName = 'webapp_input';
 
 // HELPERS
 
