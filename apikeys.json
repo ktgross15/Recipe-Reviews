@@ -202,28 +202,6 @@
   },
   {
     "execSQLLike": false,
-    "localDatasets": [],
-    "projectPrivileges": {
-      "admin": false,
-      "readProjectContent": false,
-      "writeProjectContent": false,
-      "exportDatasetsData": false,
-      "readDashboards": false,
-      "writeDashboards": false,
-      "moderateDashboards": false,
-      "runScenarios": false,
-      "manageDashboardAuthorizations": false,
-      "manageExposedElements": false,
-      "manageAdditionalDashboardUsers": false
-    },
-    "onBehalf": "CGHGdEZ",
-    "id": "UtJNhG5V40KL5dCU",
-    "key": "iryBdNJXygQ0WfKKHJwPr9L3y6K7DnkJ",
-    "label": "Key for Web app Recipe Ratings(CGHGdEZ)",
-    "createdOn": 1585520619657
-  },
-  {
-    "execSQLLike": false,
     "localDatasets": [
       {
         "datasets": [
