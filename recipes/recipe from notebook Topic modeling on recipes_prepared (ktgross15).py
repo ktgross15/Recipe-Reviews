@@ -202,8 +202,8 @@ word_model.rename(columns = dict_topic_name, inplace = True) #naming topic
 
 del word_model['norm']
 
-plt.figure(figsize=(9,8))
-sns.heatmap(word_model[:10])
+# plt.figure(figsize=(9,8))
+# sns.heatmap(word_model[:10])
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # We now display the document-topic heatmap:
@@ -214,8 +214,8 @@ document_model = pd.DataFrame(topics_model.transform(text_tfidf))
 document_model.columns.name = 'topic'
 document_model.rename(columns = dict_topic_name, inplace = True) #naming topics
 
-plt.figure(figsize=(9,8))
-sns.heatmap(document_model.sort_index()[:10]) #we limit here to the first 10 texts
+# plt.figure(figsize=(9,8))
+# sns.heatmap(document_model.sort_index()[:10]) #we limit here to the first 10 texts
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ### Topic distribution over the corpus
@@ -250,7 +250,7 @@ def top_documents_topics(topic_name, n_doc = 3, excerpt = True):
 # Thanks to the pyLDAvis package, we can easily visualise and interpret the topics that has been fit to our corpus of text data.
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-pyLDAvis.sklearn.prepare(topics_model, text_tfidf, tfidf_vectorizer)
+# pyLDAvis.sklearn.prepare(topics_model, text_tfidf, tfidf_vectorizer)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## Topics Clustering  <a id="clust">
@@ -274,11 +274,11 @@ document_bin_topic = (document_model.iloc[:,:n_topics] > 0.25).astype(int)
 contingency_matrix = np.dot(document_bin_topic.T.values, document_bin_topic.values )
 
 #Renaming of the index and columns
-contingency_matrix = pd.DataFrame(contingency_matrix)
-contingency_matrix.rename(index = dict_topic_name, inplace = True)
-contingency_matrix.rename(columns= dict_topic_name, inplace = True)
+# contingency_matrix = pd.DataFrame(contingency_matrix)
+# contingency_matrix.rename(index = dict_topic_name, inplace = True)
+# contingency_matrix.rename(columns= dict_topic_name, inplace = True)
 
-sns.clustermap(contingency_matrix)
+# sns.clustermap(contingency_matrix)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## Further steps  <a id="next">
