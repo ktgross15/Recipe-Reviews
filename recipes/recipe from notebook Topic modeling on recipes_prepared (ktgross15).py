@@ -30,7 +30,7 @@ from dataiku import pandasutils as pdu
 import pandas as pd,  seaborn as sns
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.feature_extraction import text
-
+import numpy as np
 from sklearn.decomposition import LatentDirichletAllocation,NMF
 import pyLDAvis.sklearn
 # pyLDAvis.enable_notebook()
