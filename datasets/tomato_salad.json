@@ -25,7 +25,6 @@
   "formatParams": {
     "style": "excel",
     "charset": "utf-8",
-    "separator": " ",
     "quoteChar": "\"",
     "escapeChar": "\\",
     "dateSerializationFormat": "ISO",
@@ -58,11 +57,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586300858654
+    "lastModifiedOn": 1586300879619
   },
   "creationTag": {
     "versionNumber": 0,
