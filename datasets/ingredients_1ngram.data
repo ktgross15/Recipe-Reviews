@@ -1,25 +1,49 @@
 {
   "data": [
     [
-      "grape tomato"
+      "grape"
     ],
     [
-      "plum tomato"
+      "plum"
     ],
     [
-      "thin slice red onion"
+      "thin"
     ],
     [
-      "olive oil"
+      "olive"
     ],
     [
-      "red wine vinegar"
+      "red"
     ],
     [
       "salt"
     ],
     [
       "pepper"
+    ],
+    [
+      "tomato"
+    ],
+    [
+      "tomato"
+    ],
+    [
+      "slice"
+    ],
+    [
+      "red"
+    ],
+    [
+      "onion"
+    ],
+    [
+      "wine"
+    ],
+    [
+      "vinegar"
+    ],
+    [
+      "oil"
     ]
   ],
   "schema": {
