@@ -37,6 +37,7 @@
       "type": "ColumnsSelector",
       "params": {
         "columns": [
+          "description_len",
           "description",
           "directions",
           "review_count",
