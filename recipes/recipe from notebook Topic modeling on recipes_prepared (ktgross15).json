@@ -4,7 +4,8 @@
   "optionalDependencies": false,
   "params": {
     "envSelection": {
-      "envMode": "INHERIT"
+      "envMode": "EXPLICIT_ENV",
+      "envName": "topic_modeling"
     },
     "containerSelection": {
       "containerMode": "INHERIT"
@@ -37,11 +38,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 6,
+    "versionNumber": 7,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586272136037
+    "lastModifiedOn": 1586272162212
   },
   "creationTag": {
     "versionNumber": 0,
