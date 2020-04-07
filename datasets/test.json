@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586274174959
+    "lastModifiedOn": 1586274213912
   },
   "creationTag": {
     "versionNumber": 0,
@@ -85,7 +85,56 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "name": "ingredients",
+        "type": "string"
+      },
+      {
+        "name": "directions",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "description_len",
+        "type": "bigint"
+      },
+      {
+        "name": "calories",
+        "type": "double"
+      },
+      {
+        "name": "review_count",
+        "type": "bigint"
+      },
+      {
+        "name": "rating",
+        "type": "double"
+      },
+      {
+        "name": "rating_over_4",
+        "type": "bigint"
+      },
+      {
+        "name": "site",
+        "type": "string"
+      },
+      {
+        "name": "topic",
+        "type": "bigint"
+      }
+    ],
     "userModified": true
   },
   "metrics": {
