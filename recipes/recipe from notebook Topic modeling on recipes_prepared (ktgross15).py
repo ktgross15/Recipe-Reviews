@@ -320,9 +320,6 @@ result = pd.DataFrame(topics_model.transform(tfidf_new_text), columns = [dict_to
 sns.heatmap(result)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-raw_text
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 recipes_topic_modeling = dataiku.Dataset("recipes_topic_modeling")
 recipes_topic_modeling.write_with_schema(df)
