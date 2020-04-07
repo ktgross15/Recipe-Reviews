@@ -3,14 +3,14 @@
   "centileSplits": [
     {
       "outputIndex": 0,
-      "share": 50.0
+      "share": 50
     }
   ],
-  "defaultOutputIndex": 1,
   "preFilter": {
     "distinct": false,
     "enabled": false
   },
+  "defaultOutputIndex": 1,
   "seed": 1337,
   "randomColumns": [],
   "centileOrders": [],
@@ -18,17 +18,18 @@
   "randomSplits": [
     {
       "outputIndex": 0,
-      "share": 50.0
+      "share": 80
     }
   ],
   "randomColumnsSplits": [
     {
       "outputIndex": 0,
-      "share": 50.0
+      "share": 50
     }
   ],
   "computedColumns": [],
   "writeComputedColumnsInOutput": false,
+  "mode": "RANDOM",
   "centileTDigest": false,
   "valueSplits": [
     {
@@ -89,6 +90,60 @@
         "uiData": {
           "mode": "\u0026\u0026",
           "conditions": []
+        },
+        "$status": {
+          "schema": {
+            "columns": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "author",
+                "type": "string"
+              },
+              {
+                "name": "ingredients",
+                "type": "string"
+              },
+              {
+                "name": "directions",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "description_len",
+                "type": "bigint"
+              },
+              {
+                "name": "calories",
+                "type": "double"
+              },
+              {
+                "name": "review_count",
+                "type": "bigint"
+              },
+              {
+                "name": "rating",
+                "type": "double"
+              },
+              {
+                "name": "rating_over_4",
+                "type": "bigint"
+              },
+              {
+                "name": "site",
+                "type": "string"
+              },
+              {
+                "name": "topic",
+                "type": "bigint"
+              }
+            ]
+          }
         },
         "distinct": false,
         "enabled": true
