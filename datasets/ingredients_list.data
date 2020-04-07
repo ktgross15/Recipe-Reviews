@@ -1,3 +1,16 @@
 {
-  "data": []
+  "data": [
+    [
+      "butter"
+    ],
+    [
+      null
+    ]
+  ],
+  "schema": {
+    "columns": [
+      {"name":"ingredients","type":"string"}
+    ],
+    "userModified": false
+  }
 }
