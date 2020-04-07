@@ -7,10 +7,9 @@ import json
 
 SAMPLE_SIZE = 10000
 THRESHOLD_CARDINALITY = 100
-# model_id = 's8ZCRTbJ'
-model_id = 'zGpQfCAv'
+model_id = '3MdtfR6C'
 #make this an input visually later
-dataset_name = 'train_prepared'
+dataset_name = 'recipes_topic_modeling'
 
 
 model = dataiku.Model(model_id)

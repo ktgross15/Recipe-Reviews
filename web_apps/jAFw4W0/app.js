@@ -23,9 +23,8 @@ let dateFormatOptions = {
 };
 
 let persistResults = false;
-// let inputModelId = 's8ZCRTbJ';
-let inputModelId = 'zGpQfCAv';
-let inputDatasetName = 'train_prepared';
+let inputModelId = '3MdtfR6C';
+let inputDatasetName = 'recipes_topic_modeling';
 
 // HELPERS
 
