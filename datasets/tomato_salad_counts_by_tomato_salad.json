@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586300098368
+    "lastModifiedOn": 1586300115636
   },
   "creationTag": {
     "versionNumber": 0,
@@ -88,8 +88,185 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": false
+    "columns": [
+      {
+        "name": "grape_count",
+        "type": "bigint"
+      },
+      {
+        "name": "oil_count",
+        "type": "bigint"
+      },
+      {
+        "name": "olive_count",
+        "type": "bigint"
+      },
+      {
+        "name": "onion_count",
+        "type": "bigint"
+      },
+      {
+        "name": "pepper_count",
+        "type": "bigint"
+      },
+      {
+        "name": "plum_count",
+        "type": "bigint"
+      },
+      {
+        "name": "red_count",
+        "type": "bigint"
+      },
+      {
+        "name": "salt_count",
+        "type": "bigint"
+      },
+      {
+        "name": "slice_count",
+        "type": "bigint"
+      },
+      {
+        "name": "thin_count",
+        "type": "bigint"
+      },
+      {
+        "name": "tomato_count",
+        "type": "bigint"
+      },
+      {
+        "name": "vinegar_count",
+        "type": "bigint"
+      },
+      {
+        "name": "wine_count",
+        "type": "bigint"
+      }
+    ],
+    "userModified": false,
+    "metadata": {
+      "engineType": "DSS",
+      "pivotElementsModalities": [
+        {
+          "pivotElement": {
+            "keyColumns": [
+              "tomato_salad"
+            ],
+            "valueLimit": "TOP_N",
+            "topnLimit": 20,
+            "minOccLimit": 0,
+            "explicitValues": [],
+            "globalCount": true,
+            "valueColumns": []
+          },
+          "pivotedModalities": [
+            {
+              "keyValues": [
+                "grape"
+              ],
+              "name": "grape",
+              "valueColumns": [],
+              "globalCountColumn": "grape_count"
+            },
+            {
+              "keyValues": [
+                "oil"
+              ],
+              "name": "oil",
+              "valueColumns": [],
+              "globalCountColumn": "oil_count"
+            },
+            {
+              "keyValues": [
+                "olive"
+              ],
+              "name": "olive",
+              "valueColumns": [],
+              "globalCountColumn": "olive_count"
+            },
+            {
+              "keyValues": [
+                "onion"
+              ],
+              "name": "onion",
+              "valueColumns": [],
+              "globalCountColumn": "onion_count"
+            },
+            {
+              "keyValues": [
+                "pepper"
+              ],
+              "name": "pepper",
+              "valueColumns": [],
+              "globalCountColumn": "pepper_count"
+            },
+            {
+              "keyValues": [
+                "plum"
+              ],
+              "name": "plum",
+              "valueColumns": [],
+              "globalCountColumn": "plum_count"
+            },
+            {
+              "keyValues": [
+                "red"
+              ],
+              "name": "red",
+              "valueColumns": [],
+              "globalCountColumn": "red_count"
+            },
+            {
+              "keyValues": [
+                "salt"
+              ],
+              "name": "salt",
+              "valueColumns": [],
+              "globalCountColumn": "salt_count"
+            },
+            {
+              "keyValues": [
+                "slice"
+              ],
+              "name": "slice",
+              "valueColumns": [],
+              "globalCountColumn": "slice_count"
+            },
+            {
+              "keyValues": [
+                "thin"
+              ],
+              "name": "thin",
+              "valueColumns": [],
+              "globalCountColumn": "thin_count"
+            },
+            {
+              "keyValues": [
+                "tomato"
+              ],
+              "name": "tomato",
+              "valueColumns": [],
+              "globalCountColumn": "tomato_count"
+            },
+            {
+              "keyValues": [
+                "vinegar"
+              ],
+              "name": "vinegar",
+              "valueColumns": [],
+              "globalCountColumn": "vinegar_count"
+            },
+            {
+              "keyValues": [
+                "wine"
+              ],
+              "name": "wine",
+              "valueColumns": [],
+              "globalCountColumn": "wine_count"
+            }
+          ]
+        }
+      ]
+    }
   },
   "metrics": {
     "probes": [
