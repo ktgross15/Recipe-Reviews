@@ -7,7 +7,7 @@ import json
 
 SAMPLE_SIZE = 10000
 THRESHOLD_CARDINALITY = 100
-model_id = '3MdtfR6C'
+model_id = 'wLe7LGbH'
 #make this an input visually later
 dataset_name = 'webapp_input'
 
