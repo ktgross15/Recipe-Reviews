@@ -75,13 +75,13 @@
     "target_remapping": [
       {
         "sourceValue": "high rating",
-        "mappedValue": 1,
-        "sampleFreq": 8983
+        "mappedValue": 0,
+        "sampleFreq": 8128
       },
       {
         "sourceValue": "low rating",
-        "mappedValue": 0,
-        "sampleFreq": 1017
+        "mappedValue": 1,
+        "sampleFreq": 1872
       }
     ],
     "preprocessingFitSampleRatio": 1.0,
@@ -115,7 +115,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "NONE",
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "CATEGORY",
         "state": {
           "userModified": false,
@@ -195,7 +195,7 @@
         "sendToInput": "main"
       },
       "ingredients": {
-        "text_handling": "TOKENIZE_TFIDF",
+        "text_handling": "TOKENIZE_HASHING_SVD",
         "minRowsRatio": 0.001,
         "maxRowsRatio": 0.8,
         "maxWords": 0,
@@ -204,14 +204,13 @@
         "hashSVDHashSize": 200000,
         "hashSVDSVDLimit": 50000,
         "hashSVDSVDComponents": 100,
-        "stopWordsMode": "CUSTOM",
-        "customStopWords": "teaspoon tablespoon cup pound ounc",
+        "stopWordsMode": "NONE",
         "useCustomVectorizer": false,
         "name": "ingredients",
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "TEXT",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "FreeText"
         },
