@@ -160,8 +160,8 @@ word_model.rename(columns = dict_topic_name, inplace = True) #naming topic
 
 del word_model['norm']
 
-plt.figure(figsize=(9,8))
-sns.heatmap(word_model[:10])
+# plt.figure(figsize=(9,8))
+# sns.heatmap(word_model[:10])
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # We now display the document-topic heatmap:
