@@ -3,7 +3,7 @@
   "rebuildBehavior": "EXPLICIT",
   "name": "Prediction (LOGISTIC_REGRESSION) on recipes_topic_modeling_prepared",
   "contentType": "prediction/py_memory",
-  "activeVersion": "initial",
+  "activeVersion": "1586317547735",
   "conditionalOutputs": [],
   "partitioning": {
     "ignoreNonMatchingFile": false,
@@ -15,7 +15,7 @@
     "rebuildBehavior": "NORMAL",
     "crossProjectBuildBehavior": "DEFAULT"
   },
-  "lastExportedFrom": "A-RECIPE_REVIEW_PREDICTION_WEBINAR-slYDgFdv-hDOOs1IK-s1-pp2-m1",
+  "lastExportedFrom": "A-RECIPE_REVIEW_PREDICTION_WEBINAR-slYDgFdv-hDOOs1IK-s3-pp2-m1",
   "metrics": {
     "probes": [],
     "engineConfig": {
@@ -1088,11 +1088,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586317030208
+    "lastModifiedOn": 1586317547988
   },
   "creationTag": {
     "versionNumber": 0,

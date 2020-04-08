@@ -123,7 +123,7 @@
     "gridLength": 5
   },
   "partSource": "ACTIVE_VERSION",
-  "generatingModelId": "A-RECIPE_REVIEW_PREDICTION_WEBINAR-slYDgFdv-hDOOs1IK-s1-pp2-m1",
+  "generatingModelId": "A-RECIPE_REVIEW_PREDICTION_WEBINAR-slYDgFdv-hDOOs1IK-s3-pp2-m1",
   "preprocessing": {
     "reduce": {
       "kept_variance": 0.0,
@@ -131,14 +131,14 @@
     },
     "target_remapping": [
       {
-        "sampleFreq": 8983,
-        "mappedValue": 1,
-        "sourceValue": "high rating"
-      },
-      {
-        "sampleFreq": 1017,
+        "sampleFreq": 5260,
         "mappedValue": 0,
         "sourceValue": "low rating"
+      },
+      {
+        "sampleFreq": 4740,
+        "mappedValue": 1,
+        "sourceValue": "high rating"
       }
     ],
     "per_feature": {
@@ -255,7 +255,7 @@
         "text_handling": "TOKENIZE_TFIDF",
         "ngramMaxSize": 1,
         "role": "INPUT",
-        "stopWordsMode": "CUSTOM",
+        "stopWordsMode": "NONE",
         "maxWords": 0,
         "useCustomVectorizer": false,
         "sendToInput": "main",
@@ -272,8 +272,7 @@
           "autoModifiedByDSS": false,
           "recordedMeaning": "FreeText",
           "userModified": true
-        },
-        "customStopWords": "teaspoon tablespoon cup pound ounc"
+        }
       },
       "description": {
         "hashSVDHashSize": 200000,
@@ -442,7 +441,7 @@
   },
   "splitParams": {
     "testOnLargerValues": true,
-    "instanceIdRefresher": 0,
+    "instanceIdRefresher": 2,
     "ssdSeed": 1337,
     "nFolds": 5,
     "subSamplingSeed": 1337,
@@ -471,6 +470,7 @@
     "kfold": false
   },
   "script": {
+    "contextProjectKey": "RECIPE_REVIEW_PREDICTION_WEBINAR",
     "columnsSelection": {
       "mode": "ALL"
     },
