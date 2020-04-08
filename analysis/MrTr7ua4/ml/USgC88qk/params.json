@@ -75,12 +75,12 @@
     },
     "target_remapping": [
       {
-        "sourceValue": "high rating",
+        "sourceValue": "well rated",
         "mappedValue": 0,
         "sampleFreq": 8983
       },
       {
-        "sourceValue": "low rating",
+        "sourceValue": "poorly rated",
         "mappedValue": 1,
         "sampleFreq": 1017
       }
