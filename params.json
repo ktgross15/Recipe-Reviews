@@ -164,7 +164,7 @@
       }
     }
   },
-  "name": "Recipe Review Prediction (webinar)",
+  "name": "Recipe Review Prediction",
   "imgPattern": 6,
   "metrics": {
     "probes": [],
@@ -221,11 +221,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 97,
+    "versionNumber": 98,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586304337667
+    "lastModifiedOn": 1586314589233
   },
   "creationTag": {
     "versionNumber": 0,
