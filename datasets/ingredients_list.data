@@ -1,31 +1,3 @@
 {
-  "data": [
-    [
-      "grape tomato"
-    ],
-    [
-      "plum tomato"
-    ],
-    [
-      "thin slice red onion"
-    ],
-    [
-      "olive oil"
-    ],
-    [
-      "red wine vinegar"
-    ],
-    [
-      "salt"
-    ],
-    [
-      "pepper"
-    ]
-  ],
-  "schema": {
-    "columns": [
-      {"name":"tomato_salad","type":"string"}
-    ],
-    "userModified": true
-  }
+  "data": []
 }
