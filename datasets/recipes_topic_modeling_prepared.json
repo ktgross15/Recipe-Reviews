@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586316510079
+    "lastModifiedOn": 1586316605930
   },
   "creationTag": {
     "versionNumber": 0,
@@ -99,10 +99,6 @@
         "type": "string"
       },
       {
-        "name": "directions",
-        "type": "string"
-      },
-      {
         "name": "description",
         "type": "string"
       },
@@ -115,16 +111,8 @@
         "type": "double"
       },
       {
-        "name": "review_count",
-        "type": "bigint"
-      },
-      {
-        "name": "rating",
-        "type": "double"
-      },
-      {
-        "name": "rating_over_4",
-        "type": "bigint"
+        "name": "rating_ctg",
+        "type": "string"
       },
       {
         "name": "site",
