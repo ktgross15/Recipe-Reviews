@@ -112,7 +112,7 @@ topics_model = LatentDirichletAllocation(n_topics, random_state=0)
 topics_model.fit(text_tfidf)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-topics_model.score()
+# topics_model.score()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ### Most Frequent Words per Topics
