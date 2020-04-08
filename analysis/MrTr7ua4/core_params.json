@@ -1,12 +1,54 @@
 {
   "inputDatasetSmartName": "recipes_topic_modeling",
   "script": {
-    "steps": [],
+    "steps": [
+      {
+        "type": "FindReplace",
+        "params": {
+          "output": "",
+          "normalization": "EXACT",
+          "matching": "SUBSTRING",
+          "stopAfterFirstMatch": false,
+          "mapping": [
+            {
+              "from": "1",
+              "to": "well rated"
+            },
+            {
+              "from": "0",
+              "to": "poorly rated"
+            }
+          ],
+          "appliesTo": "SINGLE_COLUMN",
+          "columns": [
+            "rating_over_4"
+          ]
+        },
+        "metaType": "PROCESSOR",
+        "preview": true,
+        "disabled": false,
+        "alwaysShowComment": false
+      }
+    ],
     "maxProcessedMemTableBytes": -1,
     "columnsSelection": {
       "mode": "ALL"
     },
-    "columnWidthsByName": {},
+    "columnWidthsByName": {
+      "name": 300,
+      "author": 204,
+      "ingredients": 300,
+      "directions": 300,
+      "description": 300,
+      "description_len": 128,
+      "calories": 100,
+      "review_count": 105,
+      "rating": 141,
+      "rating_over_4": 113,
+      "site": 100,
+      "topic": 100,
+      "rating_ctg": 100
+    },
     "coloring": {
       "scheme": "MEANING_AND_STATUS",
       "individualColumns": [],
@@ -40,7 +82,9 @@
       "autoRefreshSample": false,
       "_refreshTrigger": 0
     },
-    "exploreUIParams": {},
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
     "globalSearchQuery": "",
     "explorationFilters": [],
     "previewMode": "ALL_ROWS"
@@ -48,11 +92,11 @@
   "charts": [],
   "name": "Quick modeling of rating_over_4 on recipes_topic_modeling",
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 8,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586230028652
+    "lastModifiedOn": 1586316293516
   },
   "creationTag": {
     "versionNumber": 0,
