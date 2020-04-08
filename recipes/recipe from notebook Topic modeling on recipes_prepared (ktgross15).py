@@ -22,7 +22,7 @@
 # [See here for help with intalling python packages.](https://www.dataiku.com/learn/guide/code/python/install-python-packages.html)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# %pylab inline
+%pylab inline
 import warnings                         # Disable some warnings
 warnings.filterwarnings("ignore",category=DeprecationWarning)
 import dataiku
@@ -30,26 +30,18 @@ from dataiku import pandasutils as pdu
 import pandas as pd,  seaborn as sns
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.feature_extraction import text
-import numpy as np
+
 from sklearn.decomposition import LatentDirichletAllocation,NMF
 import pyLDAvis.sklearn
-# pyLDAvis.enable_notebook()
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-dataset_limit = 100000
+pyLDAvis.enable_notebook()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # The first thing we do is now to load the dataset and identify possible text columns.
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Take a handle on the dataset
+dataset_limit = 100000
 mydataset = dataiku.Dataset("recipes_prepared")
-
-# Load the first lines.
-# You can also load random samples, limit yourself to some columns, or only load
-# data matching some filters.
-#
-# Please refer to the Dataiku Python API documentation for more information
 df = mydataset.get_dataframe(limit = dataset_limit)
 
 df_orig = df.copy()
@@ -71,8 +63,8 @@ print "   Columns: %s (%s num, %s cat, %s date)" % (df.shape[1],
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 raw_text_col = 'ingredients'
-
 raw_text = df[raw_text_col]
+
 # Issue a warning if data contains NaNs
 if(raw_text.isnull().any()):
     print('\x1b[33mWARNING: Your text contains NaNs\x1b[0m')
@@ -88,13 +80,12 @@ if(raw_text.isnull().any()):
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 custom_stop_words = ['tablespoon','teaspoon','cup','ounc','pound','inch']
-#                      ,'chop','cut','slice','dice','minc']
 
 stop_words = text.ENGLISH_STOP_WORDS.union(custom_stop_words)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 tfidf_vectorizer = TfidfVectorizer(strip_accents = 'unicode',stop_words = stop_words,lowercase = True,
-                                token_pattern = r'\b[a-zA-Z]{3,}\b', max_df = 0.75, min_df = 0.02)
+                                token_pattern = r'\b[a-zA-Z]{3,}\b', max_df = 0.8, min_df = 0.02)
 
 text_tfidf = tfidf_vectorizer.fit_transform(raw_text)
 
@@ -121,40 +112,7 @@ topics_model = LatentDirichletAllocation(n_topics, random_state=0)
 topics_model.fit(text_tfidf)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Can tune number oftopics
-
-topics_model.score(text_tfidf)
-
-# topics_model.get_params()
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Create Document — Topic Matrix
-lda_output = topics_model.transform(text_tfidf)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# column names
-# CHANGE LATER!
-topicnames = ['Topic' + str(i) for i in range(topics_model.n_components)]
-# topicnames = ['Mexican', 'smoothies', ]
-
-# index names
-docnames = ['Doc' + str(i) for i in range(len(df))]
-
-# Make the pandas dataframe
-df_document_topic = pd.DataFrame(np.round(lda_output, 2), columns=topicnames, index=docnames)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Get dominant topic for each document
-dominant_topic = np.argmax(df_document_topic.values, axis=1)
-df_document_topic['dominant_topic'] = dominant_topic
-
-df_document_topic.head()
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df['topic'] = list(df_document_topic['dominant_topic'])
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df.tail()
+topics_model.score()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ### Most Frequent Words per Topics
@@ -184,7 +142,7 @@ for topic_idx, topic in enumerate(topics_model.components_):
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 dict_topic_name = {i: "topic_"+str(i) for i in xrange(n_topics)}
-dict_topic_name = {0: 'Mexican'}
+# dict_topic_name = {0: 'Baked Goods', 1: ''}
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ### Topics Heatmaps
@@ -202,8 +160,8 @@ word_model.rename(columns = dict_topic_name, inplace = True) #naming topic
 
 del word_model['norm']
 
-# plt.figure(figsize=(9,8))
-# sns.heatmap(word_model[:10])
+plt.figure(figsize=(9,8))
+sns.heatmap(word_model[:10])
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # We now display the document-topic heatmap:
@@ -214,8 +172,8 @@ document_model = pd.DataFrame(topics_model.transform(text_tfidf))
 document_model.columns.name = 'topic'
 document_model.rename(columns = dict_topic_name, inplace = True) #naming topics
 
-# plt.figure(figsize=(9,8))
-# sns.heatmap(document_model.sort_index()[:10]) #we limit here to the first 10 texts
+plt.figure(figsize=(9,8))
+sns.heatmap(document_model.sort_index()[:10]) #we limit here to the first 10 texts
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ### Topic distribution over the corpus
@@ -250,7 +208,7 @@ def top_documents_topics(topic_name, n_doc = 3, excerpt = True):
 # Thanks to the pyLDAvis package, we can easily visualise and interpret the topics that has been fit to our corpus of text data.
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# pyLDAvis.sklearn.prepare(topics_model, text_tfidf, tfidf_vectorizer)
+pyLDAvis.sklearn.prepare(topics_model, text_tfidf, tfidf_vectorizer)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## Topics Clustering  <a id="clust">
@@ -274,11 +232,11 @@ document_bin_topic = (document_model.iloc[:,:n_topics] > 0.25).astype(int)
 contingency_matrix = np.dot(document_bin_topic.T.values, document_bin_topic.values )
 
 #Renaming of the index and columns
-# contingency_matrix = pd.DataFrame(contingency_matrix)
-# contingency_matrix.rename(index = dict_topic_name, inplace = True)
-# contingency_matrix.rename(columns= dict_topic_name, inplace = True)
+contingency_matrix = pd.DataFrame(contingency_matrix)
+contingency_matrix.rename(index = dict_topic_name, inplace = True)
+contingency_matrix.rename(columns= dict_topic_name, inplace = True)
 
-# sns.clustermap(contingency_matrix)
+sns.clustermap(contingency_matrix)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## Further steps  <a id="next">
@@ -318,6 +276,38 @@ new_text = raw_text[:3] #Change this to the new text you'd like to score !
 tfidf_new_text = tfidf_vectorizer.transform(new_text)
 result = pd.DataFrame(topics_model.transform(tfidf_new_text), columns = [dict_topic_name[i] for i in xrange(n_topics)])
 sns.heatmap(result)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# #### 3. Add topics as features in model
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Create Document — Topic Matrix
+lda_output = topics_model.transform(text_tfidf)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# column names
+# CHANGE LATER!
+topicnames = ['Topic' + str(i) for i in range(topics_model.n_components)]
+# topicnames = ['Mexican', 'smoothies', ]
+
+# index names
+docnames = ['Doc' + str(i) for i in range(len(df))]
+
+# Make the pandas dataframe
+df_document_topic = pd.DataFrame(np.round(lda_output, 2), columns=topicnames, index=docnames)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Get dominant topic for each document
+dominant_topic = np.argmax(df_document_topic.values, axis=1)
+df_document_topic['dominant_topic'] = dominant_topic
+
+df_document_topic.head()
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+df['topic'] = list(df_document_topic['dominant_topic'])
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+df.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
