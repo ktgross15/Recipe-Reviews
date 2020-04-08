@@ -51,7 +51,7 @@
       "disabled": false,
       "type": "CreateColumnWithGREL",
       "params": {
-        "expression": "if(rating\u003e4.2, \"high rating\", \"low rating\")",
+        "expression": "if(rating\u003e4.5, \"high rating\", \"low rating\")",
         "column": "rating_ctg"
       },
       "alwaysShowComment": false
