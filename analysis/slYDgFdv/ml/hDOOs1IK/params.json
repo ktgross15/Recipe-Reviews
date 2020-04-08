@@ -75,12 +75,12 @@
     "target_remapping": [
       {
         "sourceValue": "high rating",
-        "mappedValue": 0,
+        "mappedValue": 1,
         "sampleFreq": 8983
       },
       {
         "sourceValue": "low rating",
-        "mappedValue": 1,
+        "mappedValue": 0,
         "sampleFreq": 1017
       }
     ],
@@ -115,7 +115,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "NONE",
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
           "userModified": false,
@@ -195,7 +195,7 @@
         "sendToInput": "main"
       },
       "ingredients": {
-        "text_handling": "TOKENIZE_HASHING_SVD",
+        "text_handling": "TOKENIZE_TFIDF",
         "minRowsRatio": 0.001,
         "maxRowsRatio": 0.8,
         "maxWords": 0,
@@ -204,13 +204,14 @@
         "hashSVDHashSize": 200000,
         "hashSVDSVDLimit": 50000,
         "hashSVDSVDComponents": 100,
-        "stopWordsMode": "NONE",
+        "stopWordsMode": "CUSTOM",
+        "customStopWords": "teaspoon tablespoon cup pound ounc",
         "useCustomVectorizer": false,
         "name": "ingredients",
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "TEXT",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "FreeText"
         },
