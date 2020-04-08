@@ -1,35 +1,7 @@
 {
   "inputDatasetSmartName": "recipes_topic_modeling",
   "script": {
-    "steps": [
-      {
-        "type": "FindReplace",
-        "params": {
-          "output": "",
-          "normalization": "EXACT",
-          "matching": "SUBSTRING",
-          "stopAfterFirstMatch": false,
-          "mapping": [
-            {
-              "from": "1",
-              "to": "well rated"
-            },
-            {
-              "from": "0",
-              "to": "poorly rated"
-            }
-          ],
-          "appliesTo": "SINGLE_COLUMN",
-          "columns": [
-            "rating_over_4"
-          ]
-        },
-        "metaType": "PROCESSOR",
-        "preview": true,
-        "disabled": false,
-        "alwaysShowComment": false
-      }
-    ],
+    "steps": [],
     "maxProcessedMemTableBytes": -1,
     "columnsSelection": {
       "mode": "ALL"
@@ -92,11 +64,11 @@
   "charts": [],
   "name": "Quick modeling of rating_over_4 on recipes_topic_modeling",
   "versionTag": {
-    "versionNumber": 8,
+    "versionNumber": 9,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586316293516
+    "lastModifiedOn": 1586316470077
   },
   "creationTag": {
     "versionNumber": 0,
