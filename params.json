@@ -164,7 +164,7 @@
       }
     }
   },
-  "name": "Recipe Review Prediction",
+  "name": "Recipe Review Prediction (webinar)",
   "imgPattern": 6,
   "metrics": {
     "probes": [],
@@ -221,11 +221,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 96,
+    "versionNumber": 97,
     "lastModifiedBy": {
       "login": "ktgross15"
     },
-    "lastModifiedOn": 1586304326888
+    "lastModifiedOn": 1586304337667
   },
   "creationTag": {
     "versionNumber": 0,
@@ -234,7 +234,7 @@
     },
     "lastModifiedOn": 1554832528213
   },
-  "shortDesc": "The project *Recipes* was created by Katie Gross on Apr 09th 2019\nThe project *FOOD_RECIPES_BACKUP* was copied from *kgr* by Katie Gross on Apr 02nd 2020",
+  "shortDesc": "The project *Recipes* was created by Katie Gross on Apr 09th 2019\nThe project *FOOD_RECIPES_BACKUP* was copied from *kgr* by Katie Gross on Apr 02nd 2020\nThe project *RECIPE_REVIEW_PREDICTION_WEBINAR* was copied from *FOOD_RECIPES_BACKUP* on *backup* branch by Katie Gross on Apr 07th 2020",
   "tags": [
     "imported",
     "duplicated"
