@@ -23,7 +23,7 @@ let dateFormatOptions = {
 };
 
 let persistResults = false;
-let inputModelId = '3MdtfR6C';
+let inputModelId = 'wLe7LGbH';
 let inputDatasetName = 'webapp_input';
 
 // HELPERS
