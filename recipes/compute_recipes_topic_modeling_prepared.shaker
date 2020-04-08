@@ -33,7 +33,7 @@
     {
       "preview": false,
       "metaType": "PROCESSOR",
-      "disabled": false,
+      "disabled": true,
       "type": "ColumnRenamer",
       "params": {
         "renamings": [
@@ -49,26 +49,10 @@
       "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
-      "type": "FindReplace",
+      "type": "CreateColumnWithGREL",
       "params": {
-        "output": "",
-        "mapping": [
-          {
-            "from": "1",
-            "to": "high rating"
-          },
-          {
-            "from": "0",
-            "to": "low rating"
-          }
-        ],
-        "normalization": "EXACT",
-        "columns": [
-          "rating_ctg"
-        ],
-        "appliesTo": "SINGLE_COLUMN",
-        "stopAfterFirstMatch": false,
-        "matching": "SUBSTRING"
+        "expression": "if(rating\u003e4.2, \"high rating\", \"low rating\")",
+        "column": "rating_ctg"
       },
       "alwaysShowComment": false
     },
@@ -79,9 +63,10 @@
       "type": "ColumnsSelector",
       "params": {
         "columns": [
+          "rating",
+          "rating_over_4",
           "directions",
-          "review_count",
-          "rating"
+          "review_count"
         ],
         "keep": false,
         "appliesTo": "COLUMNS"
