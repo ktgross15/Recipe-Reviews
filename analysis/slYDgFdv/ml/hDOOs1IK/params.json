@@ -39,7 +39,7 @@
     "testOnLargerValues": true,
     "kfold": false,
     "nFolds": 5,
-    "instanceIdRefresher": 1,
+    "instanceIdRefresher": 2,
     "subSamplingSeed": 1337
   },
   "preprocessing": {
