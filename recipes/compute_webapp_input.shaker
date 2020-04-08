@@ -37,12 +37,7 @@
       "type": "ColumnsSelector",
       "params": {
         "columns": [
-          "description_len",
-          "description",
-          "directions",
-          "review_count",
-          "rating_over_4",
-          "rating"
+          "rating_ctg"
         ],
         "keep": false,
         "appliesTo": "COLUMNS"
@@ -58,18 +53,19 @@
   },
   "analysisColumnData": {},
   "columnWidthsByName": {
-    "site": 100,
-    "directions": 300,
-    "description_len": 128,
     "author": 204,
-    "name": 300,
     "rating": 141,
-    "ingredients": 300,
     "description": 300,
     "review_count": 105,
+    "calories": 100,
+    "site": 100,
+    "rating_ctg": 120,
+    "directions": 300,
+    "description_len": 128,
+    "name": 300,
+    "ingredients": 300,
     "rating_over_4": 113,
-    "topic": 100,
-    "calories": 100
+    "topic": 100
   },
   "sorting": [],
   "globalSearchQuery": "",
