@@ -25,8 +25,70 @@
     "autoRefreshSample": false
   },
   "explorationFilters": [],
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnRenamer",
+      "params": {
+        "renamings": [
+          {
+            "from": "rating_over_4",
+            "to": "rating_ctg"
+          }
+        ]
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "1",
+            "to": "high rating"
+          },
+          {
+            "from": "0",
+            "to": "low rating"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "rating_ctg"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "directions",
+          "review_count",
+          "rating"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -34,7 +96,21 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "author": 204,
+    "rating": 141,
+    "description": 300,
+    "review_count": 105,
+    "calories": 100,
+    "site": 100,
+    "rating_ctg": 100,
+    "directions": 300,
+    "description_len": 128,
+    "name": 300,
+    "ingredients": 300,
+    "rating_over_4": 113,
+    "topic": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
