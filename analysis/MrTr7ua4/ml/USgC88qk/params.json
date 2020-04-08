@@ -75,14 +75,14 @@
     },
     "target_remapping": [
       {
-        "sourceValue": "0",
+        "sourceValue": "high rating",
         "mappedValue": 0,
-        "sampleFreq": 1017
+        "sampleFreq": 8983
       },
       {
-        "sourceValue": "1",
+        "sourceValue": "low rating",
         "mappedValue": 1,
-        "sampleFreq": 8983
+        "sampleFreq": 1017
       }
     ],
     "preprocessingFitSampleRatio": 1.0,
@@ -212,7 +212,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
@@ -224,7 +224,7 @@
         "sendToInput": "main"
       },
       "ingredients": {
-        "text_handling": "TOKENIZE_TFIDF",
+        "text_handling": "TOKENIZE_HASHING_SVD",
         "minRowsRatio": 0.001,
         "maxRowsRatio": 0.8,
         "maxWords": 0,
@@ -233,19 +233,18 @@
         "hashSVDHashSize": 200000,
         "hashSVDSVDLimit": 50000,
         "hashSVDSVDComponents": 100,
-        "stopWordsMode": "CUSTOM",
-        "customStopWords": "tablespoon teaspoon cup ounc pound inch",
+        "stopWordsMode": "NONE",
         "useCustomVectorizer": false,
         "name": "ingredients",
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "TEXT",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "FreeText"
         },
         "autoReason": "REJECT_DEFAULT_TEXT_HANDLING",
-        "customHandlingCode": "from sklearn.feature_extraction import text\n\n# Applies count vectorization to the feature\nprocessor \u003d text.CountVectorizer()\n",
+        "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
         "sendToInput": "main"
       },
@@ -284,7 +283,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
@@ -306,19 +305,7 @@
         "type": "CATEGORY",
         "state": {
           "userModified": false,
-          "autoModifiedByDSS": true,
-          "previousSettings": {
-            "generate_derivative": false,
-            "impute_constant_value": 0.0,
-            "quantile_bin_nb_bins": 4,
-            "binarize_threshold_mode": "MEDIAN",
-            "binarize_constant_threshold": 0.0,
-            "role": "TARGET",
-            "type": "NUMERIC",
-            "customHandlingCode": "",
-            "customProcessorWantsMatrix": false,
-            "sendToInput": "main"
-          },
+          "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
         "customHandlingCode": "",
@@ -326,20 +313,19 @@
         "sendToInput": "main"
       },
       "topic": {
-        "impute_constant_value": "0",
-        "category_handling": "DUMMIFY",
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
         "missing_handling": "IMPUTE",
-        "missing_impute_with": "MODE",
-        "dummy_clip": "CUMULATIVE_PROPORTION",
-        "cumulative_proportion": 0.95,
-        "min_samples": 10,
-        "max_nb_categories": 100,
-        "max_cat_safety": 200,
-        "dummy_drop": "AUTO",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
         "role": "INPUT",
-        "type": "CATEGORY",
+        "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
